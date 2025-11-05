@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Marine Systems & Robotics — Robotics Title Groups</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#008CE2">
+  <meta name="description" content="Marine Systems & Robotics group at Constructor University.">
+  <meta property="og:title" content="Marine Systems & Robotics — Constructor University Robotics">
+  <meta property="og:description" content="Autonomy, positioning, navigation, and perception in the marine domain led by Prof. Francesco Maurelli.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630'%3E%3Crect width='100%25' height='100%25' fill='%23008CE2'/%3E%3Ctext x='50%25' y='52%25' dominant-baseline='middle' text-anchor='middle' font-size='64' font-family='system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif' fill='white'%3ERobotics Title%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23008CE2'/%3E%3Cpath d='M8 10h16v2H8zm0 5h16v2H8zm0 5h10v2H8z' fill='white'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <style>/* load system fonts only to avoid external deps */</style>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+<header class="site-header" role="banner">
+  <div class="container header-inner">
+    <a href="/" class="brand">
+      <!-- Replace with official SVGs from Marketing -->
+      <picture>
+        <img src="../assets/img/cu-logo-color.svg" alt="Constructor University" height="32">
+      </picture>
+      <span class="brand-text">Robotics Title</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" role="navigation" aria-label="Primary">
+      <a href="../people.html">People</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../groups.html" aria-current="page">Groups</a>
+      <a href="../publications.html">Publications</a>
+      <a href="../news.html">News</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="container" role="main">
+  <h1>Marine Systems &amp; Robotics</h1>
+  <p class="lede">Led by Prof. Francesco Maurelli. Focus areas: positioning and navigation, perception, autonomy for marine platforms.</p>
+
+  <section>
+    <h2>Mission</h2>
+    <p>We advance marine autonomy through resilient perception, robust control, and fieldable platforms. Collaboration spans Constructor University, European partners, and industry stakeholders.</p>
+    <p>
+      <a href="https://constructor.university/research/school-computer-science-engineering/marine-systems-and-robotics" target="_blank" rel="noopener">Visit the official CMS page</a> for authoritative program details.
+    </p>
+  </section>
+
+  <section>
+    <h2>People</h2>
+    <div class="card-grid" id="group-people" aria-live="polite"><p>Loading people…</p></div>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <div class="card-grid" id="group-projects" aria-live="polite"><p>Loading projects…</p></div>
+  </section>
+
+  <section>
+    <h2>Selected publications</h2>
+    <div id="group-pubs" aria-live="polite"><p>Publications feed will appear once Zotero tagging is wired.</p></div>
+    <p class="note">Tag Zotero entries with <code>group:marine-systems-and-robotics</code> to surface them here automatically.</p>
+  </section>
+
+  <section>
+    <h2>Opportunities</h2>
+    <p>For theses, student assistant roles, or collaborations, email <a href="mailto:f.maurelli@constructor.university">Prof. Francesco Maurelli</a> and reference Marine Systems &amp; Robotics.</p>
+  </section>
+</main>
+<footer class="site-footer" role="contentinfo">
+  <div class="container footer-inner">
+    <p><strong>Constructor University — Robotics</strong> • Robotics Title hub</p>
+    <p><small>Prototype. Colors align with Constructor Blue (#008CE2), white, and graphite. WCAG AA contrast checked.
+    </small></p>
+  </div>
+</footer>
+<script src="../assets/js/main.js"></script>
+<script>
+  (function () {
+    var groupSlug = 'marine-systems-and-robotics';
+
+    function extractCards(htmlText, selector) {
+      var template = document.createElement('template');
+      template.innerHTML = htmlText;
+      return Array.prototype.slice.call(template.content.querySelectorAll(selector));
+    }
+
+    function renderCards(nodes, targetId) {
+      var target = document.getElementById(targetId);
+      if (!nodes.length) {
+        target.innerHTML = '<p>No entries yet.</p>';
+        return;
+      }
+      target.innerHTML = nodes.map(function (node) { return node.outerHTML; }).join('');
+    }
+
+    fetch('../people.html')
+      .then(function (response) { return response.text(); })
+      .then(function (htmlText) {
+        var nodes = extractCards(htmlText, '.card.person[data-group="' + groupSlug + '"]');
+        renderCards(nodes, 'group-people');
+      })
+      .catch(function () {
+        document.getElementById('group-people').innerHTML = '<p>Unable to load people yet.</p>';
+      });
+
+    fetch('../projects.html')
+      .then(function (response) { return response.text(); })
+      .then(function (htmlText) {
+        var nodes = extractCards(htmlText, '.card.project[data-group="' + groupSlug + '"]');
+        renderCards(nodes, 'group-projects');
+      })
+      .catch(function () {
+        document.getElementById('group-projects').innerHTML = '<p>Unable to load projects yet.</p>';
+      });
+
+    // Placeholder for Zotero integration; populate once the publications feed is wired.
+  })();
+</script>
+</body>
+</html>

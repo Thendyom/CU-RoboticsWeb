@@ -1,0 +1,8 @@
+<!-- Placeholder mark: replace with official Constructor University logo -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" role="img" aria-labelledby="title">
+  <title>Constructor University Placeholder Logo</title>
+  <rect x="0" y="0" width="40" height="40" rx="8" fill="#008CE2"/>
+  <text x="20" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">CU</text>
+  <text x="52" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#0A2A4A">Constructor</text>
+  <text x="52" y="37" font-family="Arial, sans-serif" font-size="12" letter-spacing="0.08em" fill="#0A2A4A">UNIVERSITY</text>
+</svg>
