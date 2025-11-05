@@ -1,4 +1,4 @@
-# CU-RoticsWeb
+# CU-RoboticsWeb
 
 Prototype microsite for Constructor University robotics research activity (Robotics Title hub).
 
