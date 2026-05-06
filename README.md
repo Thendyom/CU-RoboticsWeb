@@ -22,6 +22,20 @@ Main files:
 - `assets/js/main.js`
 - `assets/`
 
+## GitHub Pages
+
+The repository is ready for GitHub Pages because `index.html` is in the repository root.
+
+Recommended settings:
+
+- Source: Deploy from a branch
+- Branch: `main`
+- Folder: `/ (root)`
+
+After Pages is enabled, the public site should be available at:
+
+`https://thendyom.github.io/CU-RoboticsWeb/`
+
 ## Content Notes
 
 Program and people information should be checked against the official Constructor University pages before publishing major edits. Publications are intentionally limited to Maurelli for the current version.
