@@ -20,8 +20,10 @@ Main files:
 
 - `assets/css/styles.css`
 - `assets/js/main.js`
-- `assets/images/`
+- `assets/`
 
 ## Content Notes
 
 Program and people information should be checked against the official Constructor University pages before publishing major edits. Publications are intentionally limited to Maurelli for the current version.
+
+Visible page content currently avoids photos. Keep any future images deliberate and easy to source.
