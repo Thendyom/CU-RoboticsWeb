@@ -1,17 +1,24 @@
 :root{
-  --navy:#0B1F33;
-  --navy-2:#102A43;
-  --ink:#111827;
+  --constructor-navy:#00204D;
+  --constructor-navy-deep:#001A3E;
+  --constructor-red:#E01600;
+  --constructor-red-deep:#B31200;
+  --constructor-yellow:#FFC622;
+  --constructor-sky:#00B2FF;
+  --constructor-teal:#00A987;
+  --navy:#00204D;
+  --navy-2:#001A3E;
+  --ink:#0A0A0A;
   --graphite:#303946;
   --muted:#667085;
   --paper:#FBFAF5;
   --surface:#FFFFFF;
   --surface-soft:#F5F1E8;
-  --line:#D8D2C4;
-  --blue:#006CA8;
-  --green:#174D42;
+  --line:#D3D4D9;
+  --blue:#007ECC;
+  --green:#00695F;
   --gold:#B89145;
-  --oxblood:#7A1F2A;
+  --oxblood:#B31200;
   --shadow:0 18px 48px rgba(17,24,39,.12);
 }
 
@@ -19,7 +26,7 @@
 html{scroll-behavior:smooth}
 body{
   margin:0;
-  background:var(--paper);
+  background:linear-gradient(180deg,#F9FAFB 0,#FBFAF5 360px);
   color:var(--ink);
   font-family:Inter,Aptos,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   line-height:1.58;
@@ -45,8 +52,9 @@ ul{margin-top:.4rem}
   position:sticky;
   top:0;
   z-index:30;
-  background:rgba(251,250,245,.96);
+  background:rgba(249,250,251,.96);
   border-bottom:1px solid var(--line);
+  box-shadow:inset 0 3px 0 var(--constructor-red);
   backdrop-filter:blur(16px);
 }
 .header-inner{
@@ -68,12 +76,13 @@ ul{margin-top:.4rem}
   place-items:center;
   width:42px;
   height:42px;
-  border:1px solid rgba(184,145,69,.72);
+  border:1px solid rgba(0,178,255,.45);
   border-radius:6px;
   background:var(--navy);
   color:#fff;
   font-size:.85rem;
   font-weight:840;
+  box-shadow:inset 0 -3px 0 var(--constructor-yellow);
 }
 .brand-text{font-size:1rem;line-height:1.15}
 .site-nav{
@@ -91,7 +100,7 @@ ul{margin-top:.4rem}
 }
 .site-nav a:hover,
 .site-nav a[aria-current="page"]{
-  background:#EEE7D9;
+  background:#EAF7FF;
   color:var(--navy);
   text-decoration:none;
 }
@@ -112,7 +121,8 @@ ul{margin-top:.4rem}
   display:grid;
   align-items:center;
   background:var(--navy);
-  border-bottom:4px solid var(--gold);
+  border-bottom:4px solid var(--constructor-yellow);
+  box-shadow:inset 0 6px 0 var(--constructor-sky);
 }
 .hero::after{
   content:"";
@@ -127,7 +137,7 @@ ul{margin-top:.4rem}
   padding-top:92px;
   padding-bottom:78px;
 }
-.hero .eyebrow{color:#D7BE82}
+.hero .eyebrow{color:var(--constructor-yellow)}
 .hero h1{color:#fff}
 .hero .lede{
   max-width:720px;
@@ -165,10 +175,10 @@ ul{margin-top:.4rem}
 .btn:hover{text-decoration:none}
 .btn-primary{
   color:#111827;
-  background:#E7C774;
-  border-color:#E7C774;
+  background:var(--constructor-yellow);
+  border-color:var(--constructor-yellow);
 }
-.btn-primary:hover{background:#D7B557}
+.btn-primary:hover{background:#FFCC38}
 .btn-secondary{
   color:#fff;
   background:transparent;
@@ -183,7 +193,7 @@ ul{margin-top:.4rem}
 }
 .band .btn-secondary:hover,
 .section .btn-secondary:hover{
-  background:#F3E9D7;
+  background:#EAF7FF;
 }
 
 .page{
@@ -216,14 +226,14 @@ ul{margin-top:.4rem}
 }
 .section-heading.compact{max-width:780px}
 .band{
-  background:#EEE7D9;
+  background:#F5F1E8;
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
   padding:68px 0;
 }
 .band.inset{
   border:1px solid var(--line);
-  border-left:5px solid var(--gold);
+  border-left:5px solid var(--constructor-red);
   border-radius:6px;
   padding:34px;
   margin:36px 0;
@@ -283,9 +293,9 @@ ul{margin-top:.4rem}
 .card{padding:20px}
 .card p{color:#4A5561}
 .project-card{border-top:4px solid var(--blue)}
-.project-card:nth-child(2n){border-top-color:var(--green)}
-.project-card:nth-child(3n){border-top-color:var(--gold)}
-.project-card:nth-child(4n){border-top-color:var(--oxblood)}
+.project-card:nth-child(2n){border-top-color:var(--constructor-teal)}
+.project-card:nth-child(3n){border-top-color:var(--constructor-yellow)}
+.project-card:nth-child(4n){border-top-color:var(--constructor-red)}
 
 .people-grid{
   display:grid;
@@ -313,9 +323,9 @@ ul{margin-top:.4rem}
 }
 .tag-row span,
 .badge{
-  border:1px solid #CDBE9A;
-  background:#F8F2E5;
-  color:#4B3B1C;
+  border:1px solid #F4DAA6;
+  background:#FFF4D3;
+  color:#564410;
   border-radius:999px;
   padding:5px 10px;
   font-size:.85rem;
@@ -352,8 +362,8 @@ ul{margin-top:.4rem}
   width:10px;
   height:10px;
   border-radius:50%;
-  background:var(--gold);
-  box-shadow:0 0 0 3px #F6F0E2;
+  background:var(--constructor-teal);
+  box-shadow:0 0 0 3px #DDF4EF;
 }
 
 .project-list{
@@ -366,9 +376,9 @@ ul{margin-top:.4rem}
 .project-list span{
   display:inline-flex;
   margin-top:6px;
-  color:#4A3412;
-  background:#F8F2E5;
-  border:1px solid #D8C28E;
+  color:#564410;
+  background:#FFF4D3;
+  border:1px solid #F4DAA6;
   border-radius:999px;
   padding:4px 9px;
   font-size:.82rem;
@@ -396,6 +406,7 @@ ul{margin-top:.4rem}
   color:#fff;
   border-color:var(--navy);
   background:var(--navy);
+  box-shadow:inset 0 -3px 0 var(--constructor-red);
 }
 .pubs{display:grid;gap:12px}
 .pub-card{
@@ -404,7 +415,7 @@ ul{margin-top:.4rem}
   gap:22px;
   align-items:center;
   border:1px solid var(--line);
-  border-left:4px solid var(--green);
+  border-left:4px solid var(--constructor-teal);
   border-radius:6px;
   padding:18px;
   background:#fff;
@@ -441,7 +452,7 @@ ul{margin-top:.4rem}
   color:var(--navy);
 }
 .pub-card>a:hover{
-  background:#F3E9D7;
+  background:#EAF7FF;
   text-decoration:none;
 }
 
@@ -461,12 +472,12 @@ ul{margin-top:.4rem}
   height:42px;
   border-radius:999px;
   color:#fff;
-  background:var(--green);
+  background:var(--constructor-teal);
   font-weight:820;
 }
 .timeline-item:nth-child(2)>span{background:var(--navy)}
-.timeline-item:nth-child(3)>span{background:var(--oxblood)}
-.timeline-item:nth-child(4)>span{background:var(--gold);color:#1F2937}
+.timeline-item:nth-child(3)>span{background:var(--constructor-red)}
+.timeline-item:nth-child(4)>span{background:var(--constructor-yellow);color:#1F2937}
 .timeline-item p{color:#4A5561}
 
 .sources{padding-top:34px}
@@ -488,7 +499,7 @@ ul{margin-top:.4rem}
 }
 .link-grid a:hover{
   text-decoration:none;
-  background:#F3E9D7;
+  background:#EAF7FF;
 }
 
 .note{
@@ -503,7 +514,7 @@ ul{margin-top:.4rem}
 
 .site-footer{
   margin-top:44px;
-  border-top:1px solid #1E3A56;
+  border-top:4px solid var(--constructor-sky);
   background:var(--navy);
   color:#fff;
 }
