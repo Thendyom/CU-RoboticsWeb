@@ -1,0 +1,40 @@
+name: Publication candidates
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 6 1 * *'
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Refresh publication candidates
+        env:
+          PUBLICATION_PROVIDER: semantic-scholar
+          SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
+        run: node scripts/update-publication-candidates.mjs
+
+      - name: Commit candidate update
+        run: |
+          if [ -n "$(git status --porcelain assets/data/publication-candidates.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add assets/data/publication-candidates.json
+            git commit -m "Update publication candidates"
+            git push
+          else
+            echo "No publication candidate changes."
+          fi

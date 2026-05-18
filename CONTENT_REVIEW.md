@@ -12,6 +12,9 @@ Last full review pass started: 2026-05-18
 | https://constructor.university/faculty-member/prof-dr-francesco-maurelli | Maurelli role, contact profile, research interests, selected publications | 2026-05-18 |
 | https://constructor.university/research/school-computer-science-engineering/marine-systems-and-robotics | Marine Systems and Robotics group themes and leadership | 2026-05-18 |
 | https://robotics.constructor.university/publications/ | Constructor Robotics publication entries and DOI/source links | 2026-05-18 |
+| https://www.semanticscholar.org/product/api | Free/public publication candidate API option and rate-limit reference | 2026-05-18 |
+| https://developers.openalex.org/guides/authentication | Free OpenAlex API-key option and daily free usage reference | 2026-05-18 |
+| https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows | Monthly GitHub Actions schedule syntax | 2026-05-18 |
 | https://cnds.constructor.university/ | Academic structure and restrained department-site reference | 2026-05-18 |
 | https://robotics.umich.edu/academics/graduate/new-graduate-students/ | Student-facing structure reference, not a factual source for RIS | 2026-05-18 |
 
@@ -27,6 +30,7 @@ Last full review pass started: 2026-05-18
 | `projects.html` | Reviewed | Research areas kept tied to Constructor Robotics public pages. |
 | `groups.html` | Reviewed | Uses reviewed data instead of `fetch()` for `file://` compatibility. |
 | `groups/marine-systems-and-robotics.html` | Reviewed | Placeholder content replaced with reviewed MSR facts. |
+| `.github/workflows/publication-candidates.yml` | Reviewed | Monthly candidate refresh only; does not publish unreviewed papers. |
 
 ## Writing Rules
 
@@ -36,3 +40,4 @@ Last full review pass started: 2026-05-18
 - Keep Maurelli publications selected and source-backed for this version.
 - Do not add person or research photos in this pass.
 - Use the reviewed data file for maintainable people, group, and publication entries.
+- Treat monthly publication API results as candidates until they are reviewed.

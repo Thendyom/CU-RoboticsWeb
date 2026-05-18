@@ -1,0 +1,14 @@
+{
+  "provider": "semantic-scholar",
+  "maxPapersPerAuthor": 20,
+  "authors": [
+    {
+      "id": "francesco-maurelli",
+      "name": "Francesco Maurelli",
+      "enabled": true,
+      "affiliationHint": "Constructor University",
+      "semanticScholarAuthorId": "",
+      "openAlexAuthorId": ""
+    }
+  ]
+}

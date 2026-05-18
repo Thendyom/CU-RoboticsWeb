@@ -23,7 +23,29 @@ Main files:
 - `assets/css/styles.css`
 - `assets/js/main.js`
 - `assets/js/reviewed-data.js`
+- `assets/data/publication-authors.json`
+- `assets/data/publication-candidates.json`
+- `scripts/update-publication-candidates.mjs`
 - `CONTENT_REVIEW.md`
+
+## Publication Candidate Updates
+
+The site can refresh publication candidates once a month through GitHub Actions.
+
+- Workflow: `.github/workflows/publication-candidates.yml`
+- Schedule: first day of each month at 06:17 UTC
+- Default provider: Semantic Scholar public API
+- Output: `assets/data/publication-candidates.json`
+
+The workflow does not publish new papers directly to the visible site. It only updates the candidate file. Reviewed publications should still be copied into `assets/js/reviewed-data.js` after checking the author match, title, venue, year, and source link.
+
+To test the updater without making API calls:
+
+```sh
+node scripts/update-publication-candidates.mjs --dry-run
+```
+
+To use OpenAlex instead, add a free `OPENALEX_API_KEY` repository secret and set `PUBLICATION_PROVIDER` to `openalex` in the workflow. Semantic Scholar can run without a key, but adding `SEMANTIC_SCHOLAR_API_KEY` as a repository secret is more reliable.
 
 ## GitHub Pages
 

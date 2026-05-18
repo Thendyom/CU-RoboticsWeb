@@ -1,0 +1,11 @@
+{
+  "generatedAt": null,
+  "status": "not-run",
+  "provider": null,
+  "notes": [
+    "Run scripts/update-publication-candidates.mjs or the monthly GitHub Action to refresh candidate publications.",
+    "Candidates are for review only. Reviewed publications still live in assets/js/reviewed-data.js."
+  ],
+  "authors": [],
+  "candidates": []
+}
