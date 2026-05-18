@@ -19,14 +19,14 @@ Last full review pass started: 2026-05-18
 
 | Page | Status | Notes |
 | --- | --- | --- |
-| `README.md` | In progress | Needs short current explanation and maintenance notes. |
-| `index.html` | In progress | Use RIS official page for program facts. Keep copy direct. |
-| `people.html` | In progress | Maurelli first; Suchan only for verified program-chair context. |
-| `publications.html` | In progress | Maurelli-only selected publications from reviewed data. |
-| `news.html` | In progress | Rework as student resources page, inspired by Michigan structure but Constructor-specific. |
-| `projects.html` | In progress | Keep project/research claims tied to Constructor Robotics pages. |
-| `groups.html` | In progress | Remove brittle `fetch()` pattern for `file://` preview. |
-| `groups/marine-systems-and-robotics.html` | In progress | Replace placeholders with reviewed MSR facts. |
+| `README.md` | Reviewed | Short current explanation and maintenance notes added. |
+| `index.html` | Reviewed | Program facts checked against the official RIS page. |
+| `people.html` | Reviewed | Maurelli first; Suchan included only for verified program-chair context. |
+| `publications.html` | Reviewed | Maurelli-only selected publications rendered from reviewed data. |
+| `news.html` | Reviewed | Reworked as student resources page, inspired by Michigan structure but Constructor-specific. |
+| `projects.html` | Reviewed | Research areas kept tied to Constructor Robotics public pages. |
+| `groups.html` | Reviewed | Uses reviewed data instead of `fetch()` for `file://` compatibility. |
+| `groups/marine-systems-and-robotics.html` | Reviewed | Placeholder content replaced with reviewed MSR facts. |
 
 ## Writing Rules
 
