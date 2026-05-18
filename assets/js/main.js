@@ -46,11 +46,7 @@ function renderPublications() {
     meta.className = 'pub-meta';
     meta.textContent = `${publication.authors} | ${publication.venue}`;
 
-    const checked = document.createElement('p');
-    checked.className = 'pub-source';
-    checked.textContent = `Checked ${publication.checkedDate}`;
-
-    body.append(year, title, meta, checked);
+    body.append(year, title, meta);
 
     const link = document.createElement('a');
     link.href = publication.doiUrl || publication.scholarUrl || publication.sourceUrl;

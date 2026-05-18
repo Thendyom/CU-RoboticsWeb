@@ -175,6 +175,16 @@ ul{margin-top:.4rem}
   border-color:rgba(255,255,255,.45);
 }
 .btn-secondary:hover{background:rgba(255,255,255,.1)}
+.band .btn-secondary,
+.section .btn-secondary{
+  color:var(--navy);
+  background:#fff;
+  border-color:var(--line);
+}
+.band .btn-secondary:hover,
+.section .btn-secondary:hover{
+  background:#F3E9D7;
+}
 
 .page{
   padding-top:68px;

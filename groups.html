@@ -24,12 +24,11 @@
     <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
     <nav id="site-nav" class="site-nav" role="navigation" aria-label="Primary">
       <a href="index.html">Program</a>
+      <a href="projects.html" aria-current="page">Research</a>
       <a href="people.html">People</a>
-      <a href="projects.html">Projects</a>
-      <a href="groups.html" aria-current="page">Groups</a>
       <a href="publications.html">Publications</a>
       <a href="news.html">Students</a>
-      <a href="https://constructor.university/" target="_blank" rel="noopener">Constructor</a>
+      <a href="https://constructor.university/" target="_blank" rel="noopener">Official</a>
     </nav>
   </div>
 </header>
@@ -38,7 +37,7 @@
   <section class="page-intro">
     <p class="eyebrow">Groups</p>
     <h1>Research groups</h1>
-    <p>For this version, the group directory is intentionally small and reviewed. It starts with Marine Systems and Robotics because the current site focus is Maurelli.</p>
+    <p>The directory starts with Marine Systems and Robotics, the group most closely tied to the Maurelli publication focus.</p>
   </section>
 
   <section class="section">
@@ -64,7 +63,7 @@
     el.innerHTML = groups.map(function (group) {
       return (
         '<article class="card project-card">' +
-          '<p class="eyebrow">Reviewed group</p>' +
+          '<p class="eyebrow">Research group</p>' +
           '<h2>' + group.name + '</h2>' +
           '<p>' + group.summary + '</p>' +
           '<p class="links">' +

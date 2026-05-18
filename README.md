@@ -63,7 +63,7 @@ After Pages is enabled, the public site should be available at:
 
 ## Content Notes
 
-Program and people information should be checked against the official Constructor University pages before publishing major edits. Publications are intentionally limited to Prof. Dr. Francesco Maurelli for the current version.
+Program and people information should be checked against the official Constructor University pages before publishing major edits. Publications are intentionally centered on Prof. Dr. Francesco Maurelli.
 
 Use `CONTENT_REVIEW.md` to track reviewed claims and sources. Use `assets/js/reviewed-data.js` for people, group, and publication entries that should be easier to maintain later.
 
