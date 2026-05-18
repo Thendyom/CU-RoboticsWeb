@@ -59,6 +59,28 @@
         officialUrl: 'https://constructor.university/faculty-member/jakob-suchan',
         sourceUrl: 'https://constructorcampus.org/programs/undergraduate-education/robotics-intelligent-systems',
         checkedDate
+      },
+      {
+        id: 'qais-mohammed-kamel-al-ramahi',
+        name: 'Al-Ramahi, Qais Mohammed Kamel',
+        role: 'Site contributor credit',
+        programRole: 'Hidden site credit',
+        affiliation: '',
+        summary: 'Internal site-credit entry; not rendered on the public people page.',
+        tags: ['Site credit'],
+        visibility: 'easter-egg',
+        checkedDate
+      },
+      {
+        id: 'tim-william-bense',
+        name: 'Bense, Tim William',
+        role: 'Site contributor credit',
+        programRole: 'Hidden site credit',
+        affiliation: '',
+        summary: 'Internal site-credit entry; not rendered on the public people page.',
+        tags: ['Site credit'],
+        visibility: 'easter-egg',
+        checkedDate
       }
     ],
     groups: [
