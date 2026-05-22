@@ -2,16 +2,18 @@
 
 This site should only publish claims that have been checked against official or scholarly sources. The visible copy should read like it was written for students and academics, not like a generic program brochure.
 
-Last full review pass started: 2026-05-18
+Last full review pass started: 2026-05-22
 
 ## Source Baseline
 
 | Source | Use | Checked |
 | --- | --- | --- |
-| https://constructorcampus.org/programs/undergraduate-education/robotics-intelligent-systems | Official RIS program facts, curriculum structure, program chairs, admissions links | 2026-05-18 |
-| https://constructor.university/faculty-member/prof-dr-francesco-maurelli | Maurelli role, contact profile, research interests, selected publications | 2026-05-18 |
-| https://constructor.university/research/school-computer-science-engineering/marine-systems-and-robotics | Marine Systems and Robotics group themes and leadership | 2026-05-18 |
-| https://robotics.constructor.university/publications/ | Constructor Robotics publication entries and DOI/source links | 2026-05-18 |
+| https://constructorcampus.org/programs/undergraduate-education/robotics-intelligent-systems | Official RIS program facts, current curriculum structure, program chairs, admissions links | 2026-05-22 |
+| https://constructor.university/sites/default/files/2026-02/RIS_Handbook_2025_v1_2_0.pdf | Current RIS handbook, degree structure, internship, study abroad, thesis, formal module references | 2026-05-22 |
+| Provided Fall 2023 RIS handbook copy | Cross-check for the 4C model, 180 ECTS degree scope, internship, mobility window, and thesis structure | 2026-05-22 |
+| https://constructor.university/faculty-member/prof-dr-francesco-maurelli | Maurelli role, contact profile, research interests, selected publications | 2026-05-22 |
+| https://constructor.university/research/school-computer-science-engineering/marine-systems-and-robotics | Marine Systems and Robotics group themes and leadership | 2026-05-22 |
+| https://robotics.constructor.university/publications/ | Constructor Robotics publication entries and DOI/source links | 2026-05-22 |
 | https://www.semanticscholar.org/product/api | Free/public publication candidate API option and rate-limit reference | 2026-05-18 |
 | https://developers.openalex.org/guides/authentication | Free OpenAlex API-key option and daily free usage reference | 2026-05-18 |
 | https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows | Monthly GitHub Actions schedule syntax | 2026-05-18 |
@@ -23,10 +25,10 @@ Last full review pass started: 2026-05-18
 | Page | Status | Notes |
 | --- | --- | --- |
 | `README.md` | Reviewed | Short current explanation and maintenance notes added. |
-| `index.html` | Reviewed | Program facts checked against the official RIS page. |
+| `index.html` | Reviewed | Program facts checked against the official RIS page and current handbook. |
 | `people.html` | Reviewed | Maurelli first; Suchan included only for verified program-chair context. |
 | `publications.html` | Reviewed | Maurelli-only selected publications rendered from reviewed data. |
-| `news.html` | Reviewed | Reworked as student resources page, inspired by Michigan structure but Constructor-specific. |
+| `news.html` | Reviewed | Student-facing structure checked against the official RIS page and handbook. |
 | `projects.html` | Reviewed | Research areas kept tied to Constructor Robotics public pages. |
 | `groups.html` | Reviewed | Uses reviewed data instead of `fetch()` for `file://` compatibility. |
 | `groups/marine-systems-and-robotics.html` | Reviewed | Placeholder content replaced with reviewed MSR facts. |
@@ -37,7 +39,8 @@ Last full review pass started: 2026-05-18
 - Prefer direct statements over promotional claims.
 - Link the source when a reader may reasonably ask, "where did that come from?"
 - Do not list people, projects, or deadlines unless the source is current and public.
-- Keep Maurelli publications selected and source-backed for this version.
+- Prefer the current program page and handbook for formal curriculum wording when older handbook copies differ in module names.
+- Keep the selected publication list Maurelli-centered and source-backed for this version.
 - Do not add person or research photos in this pass.
 - Use the reviewed data file for maintainable people, group, and publication entries.
 - Treat monthly publication API results as candidates until they are reviewed.
