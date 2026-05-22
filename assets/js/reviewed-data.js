@@ -1,11 +1,16 @@
 (function () {
-  const checkedDate = '2026-05-18';
+  const checkedDate = '2026-05-22';
 
   window.RIS_REVIEWED_DATA = {
     sources: [
       {
         label: 'Official RIS program page',
         url: 'https://constructorcampus.org/programs/undergraduate-education/robotics-intelligent-systems',
+        checkedDate
+      },
+      {
+        label: 'Current RIS handbook',
+        url: 'https://constructor.university/sites/default/files/2026-02/RIS_Handbook_2025_v1_2_0.pdf',
         checkedDate
       },
       {
@@ -21,6 +26,16 @@
       {
         label: 'Constructor Robotics publications',
         url: 'https://robotics.constructor.university/publications/',
+        checkedDate
+      },
+      {
+        label: 'Constructor Robotics research domains',
+        url: 'https://robotics.constructor.university/research/',
+        checkedDate
+      },
+      {
+        label: 'Constructor Robotics funded projects',
+        url: 'https://robotics.constructor.university/projects/',
         checkedDate
       },
       {

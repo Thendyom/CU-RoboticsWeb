@@ -12,7 +12,11 @@ Last full review pass started: 2026-05-22
 | https://constructor.university/sites/default/files/2026-02/RIS_Handbook_2025_v1_2_0.pdf | Current RIS handbook, degree structure, internship, study abroad, thesis, formal module references | 2026-05-22 |
 | Provided Fall 2023 RIS handbook copy | Cross-check for the 4C model, 180 ECTS degree scope, internship, mobility window, and thesis structure | 2026-05-22 |
 | https://constructor.university/faculty-member/prof-dr-francesco-maurelli | Maurelli role, contact profile, research interests, selected publications | 2026-05-22 |
+| https://constructor.university/faculty-member/jakob-suchan | Suchan role and research profile | 2026-05-22 |
 | https://constructor.university/research/school-computer-science-engineering/marine-systems-and-robotics | Marine Systems and Robotics group themes and leadership | 2026-05-22 |
+| https://robotics.constructor.university/ | Constructor Robotics program link and wider research context | 2026-05-22 |
+| https://robotics.constructor.university/research/ | Constructor Robotics application domains | 2026-05-22 |
+| https://robotics.constructor.university/projects/ | Constructor Robotics funded project examples and listed funders | 2026-05-22 |
 | https://robotics.constructor.university/publications/ | Constructor Robotics publication entries and DOI/source links | 2026-05-22 |
 | https://www.semanticscholar.org/product/api | Free/public publication candidate API option and rate-limit reference | 2026-05-18 |
 | https://developers.openalex.org/guides/authentication | Free OpenAlex API-key option and daily free usage reference | 2026-05-18 |
@@ -29,7 +33,7 @@ Last full review pass started: 2026-05-22
 | `people.html` | Reviewed | Maurelli first; Suchan included only for verified program-chair context. |
 | `publications.html` | Reviewed | Maurelli-only selected publications rendered from reviewed data. |
 | `news.html` | Reviewed | Student-facing structure checked against the official RIS page and handbook. |
-| `projects.html` | Reviewed | Research areas kept tied to Constructor Robotics public pages. |
+| `projects.html` | Reviewed | Research domains and project examples checked against Constructor Robotics pages. |
 | `groups.html` | Reviewed | Uses reviewed data instead of `fetch()` for `file://` compatibility. |
 | `groups/marine-systems-and-robotics.html` | Reviewed | Placeholder content replaced with reviewed MSR facts. |
 | `.github/workflows/publication-candidates.yml` | Reviewed | Monthly candidate refresh only; does not publish unreviewed papers. |
@@ -41,6 +45,7 @@ Last full review pass started: 2026-05-22
 - Do not list people, projects, or deadlines unless the source is current and public.
 - Prefer the current program page and handbook for formal curriculum wording when older handbook copies differ in module names.
 - Keep the selected publication list Maurelli-centered and source-backed for this version.
+- Treat publication co-authors and tracked candidate authors separately; the current candidate author list contains only Francesco Maurelli.
 - Do not add person or research photos in this pass.
 - Use the reviewed data file for maintainable people, group, and publication entries.
 - Treat monthly publication API results as candidates until they are reviewed.

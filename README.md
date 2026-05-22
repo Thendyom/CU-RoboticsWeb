@@ -39,6 +39,8 @@ The site can refresh publication candidates once a month through GitHub Actions.
 
 The workflow does not publish new papers directly to the visible site. It only updates the candidate file. Reviewed publications should still be copied into `assets/js/reviewed-data.js` after checking the author match, title, venue, year, and source link.
 
+The tracked author list for the candidate updater lives in `assets/data/publication-authors.json`. It currently contains one enabled author: Francesco Maurelli. Co-authors appear in the reviewed publication cards, but they are not tracked as RIS authors by the updater unless they are added and reviewed separately.
+
 To test the updater without making API calls:
 
 ```sh
