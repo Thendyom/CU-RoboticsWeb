@@ -2,15 +2,16 @@
 
 Static website for the Robotics and Intelligent Systems program at Constructor University.
 
-The site is a small academic hub for RIS: program context, people, research areas, selected publications, and practical student links. It is intentionally text-first for now. Photos are not used in the visible pages.
+The site is a small academic hub for RIS: program context, people, research areas, selected publications, graduate paths, and practical student links. Its visual approach is text-first, without photos on the visible pages.
 
 ## Pages
 
 - `index.html` - program overview and student-oriented introduction.
 - `people.html` - program chairs and the Marine Systems and Robotics group.
 - `projects.html` - research areas and example project directions.
-- `publications.html` - selected publications, currently centered on Prof. Dr. Francesco Maurelli.
-- `news.html` - student-facing starting points, research preparation, and official links.
+- `publications.html` - selected publications centered on Prof. Dr. Francesco Maurelli.
+- `news.html` - student-facing starting points, research preparation, and a bachelor's thesis framework.
+- `graduate-paths.html` - possible next steps and, when available, graduate destinations grouped by class year.
 - `groups.html` - research group overview.
 - `groups/marine-systems-and-robotics.html` - Marine Systems and Robotics group page.
 
@@ -23,6 +24,7 @@ Main files:
 - `assets/css/styles.css`
 - `assets/js/main.js`
 - `assets/js/reviewed-data.js`
+- `assets/downloads/RIS_Bachelor_Thesis_Example_Bundle.zip`
 - `assets/data/publication-authors.json`
 - `assets/data/publication-candidates.json`
 - `scripts/update-publication-candidates.mjs`

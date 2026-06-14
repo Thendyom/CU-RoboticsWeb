@@ -2,7 +2,7 @@
 
 This site should only publish claims that have been checked against official or scholarly sources. The visible copy should read like it was written for students and academics, not like a generic program brochure.
 
-Last full review pass started: 2026-05-22
+Last full review pass: 2026-06-14
 
 ## Source Baseline
 
@@ -36,6 +36,7 @@ Last full review pass started: 2026-05-22
 | `projects.html` | Reviewed | Research domains and project examples checked against Constructor Robotics pages. |
 | `groups.html` | Reviewed | Uses reviewed data instead of `fetch()` for `file://` compatibility. |
 | `groups/marine-systems-and-robotics.html` | Reviewed | Placeholder content replaced with reviewed MSR facts. |
+| `graduate-paths.html` | Reviewed | Presents possible directions without claiming unverified graduate outcomes. Add individual entries only after the graduate has shared them. |
 | `.github/workflows/publication-candidates.yml` | Reviewed | Monthly candidate refresh only; does not publish unreviewed papers. |
 
 ## Writing Rules
@@ -49,3 +50,4 @@ Last full review pass started: 2026-05-22
 - Do not add person or research photos in this pass.
 - Use the reviewed data file for maintainable people, group, and publication entries.
 - Treat monthly publication API results as candidates until they are reviewed.
+- Publish graduate destinations only after the graduate has shared the name, class year, next step, and destination.

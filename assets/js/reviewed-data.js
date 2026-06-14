@@ -1,5 +1,5 @@
 (function () {
-  const checkedDate = '2026-05-22';
+  const checkedDate = '2026-06-14';
 
   window.RIS_REVIEWED_DATA = {
     sources: [
@@ -9,7 +9,7 @@
         checkedDate
       },
       {
-        label: 'Current RIS handbook',
+        label: 'RIS handbook',
         url: 'https://constructor.university/sites/default/files/2026-02/RIS_Handbook_2025_v1_2_0.pdf',
         checkedDate
       },
