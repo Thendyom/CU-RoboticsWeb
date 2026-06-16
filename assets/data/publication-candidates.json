@@ -4,8 +4,10 @@
   "provider": null,
   "notes": [
     "Run scripts/update-publication-candidates.mjs or the monthly GitHub Action to refresh candidate publications.",
-    "Candidates are for review only. Reviewed publications still live in assets/js/reviewed-data.js."
+    "Candidates are deduplicated by DOI and normalized title, then mirrored into assets/js/generated-publications.js for the visible publications page."
   ],
   "authors": [],
+  "duplicateCount": 0,
+  "duplicates": [],
   "candidates": []
 }
