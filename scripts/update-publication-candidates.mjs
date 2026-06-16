@@ -153,17 +153,16 @@ async function findSemanticScholarAuthor(baseUrl, author, fields, headers) {
 }
 
 async function getOpenAlexAuthorPapers(author, limit) {
-  const apiKey = process.env.OPENALEX_API_KEY;
-  if (!apiKey) {
-    throw new Error('OpenAlex now requires a free OPENALEX_API_KEY for API use.');
-  }
+  const apiKey = process.env.OPENALEX_API_KEY || '';
 
   const authorId = author.openAlexAuthorId || await findOpenAlexAuthorId(author, apiKey);
   const url = new URL('https://api.openalex.org/works');
   url.searchParams.set('filter', `authorships.author.id:${authorId}`);
   url.searchParams.set('sort', 'publication_date:desc');
   url.searchParams.set('per-page', String(limit));
-  url.searchParams.set('api_key', apiKey);
+  if (apiKey) {
+    url.searchParams.set('api_key', apiKey);
+  }
 
   const data = await fetchJson(url);
   const papers = (data.results || []).map((work) => ({
@@ -194,10 +193,17 @@ async function getOpenAlexAuthorPapers(author, limit) {
 async function findOpenAlexAuthorId(author, apiKey) {
   const url = new URL('https://api.openalex.org/authors');
   url.searchParams.set('search', author.name);
-  url.searchParams.set('per-page', '1');
-  url.searchParams.set('api_key', apiKey);
+  url.searchParams.set('per-page', '10');
+  if (apiKey) {
+    url.searchParams.set('api_key', apiKey);
+  }
   const data = await fetchJson(url);
-  const match = data.results?.[0];
+  const matches = data.results || [];
+  const affiliationHint = normalizeText(author.affiliationHint || '');
+  const affiliationMatch = affiliationHint
+    ? matches.find((entry) => hasOpenAlexAffiliationHint(entry, affiliationHint))
+    : null;
+  const match = affiliationMatch || matches[0];
   if (!match?.id) {
     throw new Error(`No OpenAlex author match for ${author.name}`);
   }
@@ -219,6 +225,17 @@ function formatSemanticScholarAuthors(authors = []) {
 function hasAffiliationHint(author, affiliationHint) {
   return (author.affiliations || []).some((affiliation) => {
     return normalizeText(affiliation).includes(affiliationHint);
+  });
+}
+
+function hasOpenAlexAffiliationHint(author, affiliationHint) {
+  const institutions = [
+    ...(author.last_known_institutions || []),
+    ...(author.affiliations || []).map((affiliation) => affiliation.institution)
+  ];
+
+  return institutions.some((institution) => {
+    return normalizeText(institution?.display_name || '').includes(affiliationHint);
   });
 }
 
