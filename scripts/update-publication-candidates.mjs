@@ -3,13 +3,15 @@
 import { readFile, writeFile } from 'node:fs/promises';
 
 const configUrl = new URL('../assets/data/publication-authors.json', import.meta.url);
-const outputUrl = new URL('../assets/data/publication-candidates.json', import.meta.url);
+const candidatesOutputUrl = new URL('../assets/data/publication-candidates.json', import.meta.url);
+const siteOutputUrl = new URL('../assets/js/generated-publications.js', import.meta.url);
 const dryRun = process.argv.includes('--dry-run');
 
 const config = JSON.parse(await readFile(configUrl, 'utf8'));
 const enabledAuthors = (config.authors || []).filter((author) => author.enabled !== false);
 const provider = process.env.PUBLICATION_PROVIDER || config.provider || 'semantic-scholar';
 const maxPapers = Number(config.maxPapersPerAuthor || 20);
+const generatedAt = new Date().toISOString();
 
 if (dryRun) {
   console.log(JSON.stringify({
@@ -26,16 +28,20 @@ if (dryRun) {
 }
 
 const output = {
-  generatedAt: new Date().toISOString(),
+  generatedAt,
   status: 'ok',
   provider,
   notes: [
-    'Candidates are generated from free scholarly APIs and require human review before being copied into assets/js/reviewed-data.js.',
+    'Publications are generated from free scholarly APIs and mirrored into assets/js/generated-publications.js for the visible site.',
+    'Papers are deduplicated by DOI and normalized title before publishing.',
     'Use stable author IDs when possible. Name-only searches can match the wrong researcher.'
   ],
   authors: [],
+  duplicateCount: 0,
+  duplicates: [],
   candidates: []
 };
+const collectedCandidates = [];
 
 for (const author of enabledAuthors) {
   try {
@@ -44,7 +50,7 @@ for (const author of enabledAuthors) {
       : await getSemanticScholarAuthorPapers(author, maxPapers);
 
     output.authors.push(result.author);
-    output.candidates.push(...result.papers);
+    collectedCandidates.push(...result.papers);
   } catch (error) {
     output.status = 'partial';
     output.authors.push({
@@ -56,8 +62,22 @@ for (const author of enabledAuthors) {
   }
 }
 
-await writeFile(outputUrl, `${JSON.stringify(output, null, 2)}\n`);
-console.log(`Wrote ${output.candidates.length} candidate publications to ${outputUrl.pathname}`);
+const deduped = deduplicatePublications(collectedCandidates);
+output.duplicateCount = deduped.duplicates.length;
+output.duplicates = deduped.duplicates;
+output.candidates = deduped.publications;
+
+const siteOutput = {
+  generatedAt,
+  status: output.status,
+  provider,
+  authors: output.authors,
+  publications: output.candidates
+};
+
+await writeFile(candidatesOutputUrl, `${JSON.stringify(output, null, 2)}\n`);
+await writeFile(siteOutputUrl, `window.RIS_GENERATED_PUBLICATIONS = ${JSON.stringify(siteOutput, null, 2)};\n`);
+console.log(`Wrote ${output.candidates.length} deduplicated publications to ${siteOutputUrl.pathname}`);
 
 async function getSemanticScholarAuthorPapers(author, limit) {
   const fields = [
@@ -117,9 +137,15 @@ async function getSemanticScholarAuthorPapers(author, limit) {
 }
 
 async function findSemanticScholarAuthor(baseUrl, author, fields, headers) {
-  const url = `${baseUrl}/author/search?query=${encodeURIComponent(author.name)}&limit=1&fields=${fields}`;
+  const url = `${baseUrl}/author/search?query=${encodeURIComponent(author.name)}&limit=10&fields=${fields}`;
   const result = await fetchJson(url, headers);
-  const match = result.data?.[0];
+  const matches = result.data || [];
+  const affiliationHint = normalizeText(author.affiliationHint || '');
+  const affiliationMatch = affiliationHint
+    ? matches.find((entry) => hasAffiliationHint(entry, affiliationHint))
+    : null;
+  const match = affiliationMatch || matches[0];
+
   if (!match) {
     throw new Error(`No Semantic Scholar author match for ${author.name}`);
   }
@@ -188,4 +214,129 @@ async function fetchJson(url, headers = {}) {
 
 function formatSemanticScholarAuthors(authors = []) {
   return authors.map((entry) => entry.name).filter(Boolean).join(', ');
+}
+
+function hasAffiliationHint(author, affiliationHint) {
+  return (author.affiliations || []).some((affiliation) => {
+    return normalizeText(affiliation).includes(affiliationHint);
+  });
+}
+
+function deduplicatePublications(papers) {
+  const index = new Map();
+  const publications = [];
+  const duplicates = [];
+
+  for (const paper of papers) {
+    const keys = getPublicationKeys(paper);
+    const existing = keys.map((key) => index.get(key)).find(Boolean);
+
+    if (existing) {
+      mergePublication(existing, paper);
+      duplicates.push({
+        title: paper.title,
+        researcherName: paper.researcherName,
+        duplicateOf: existing.title
+      });
+      keys.forEach((key) => index.set(key, existing));
+      continue;
+    }
+
+    const publication = {
+      ...paper,
+      researcherIds: uniqueValues([paper.researcherId]),
+      researcherNames: uniqueValues([paper.researcherName]),
+      tags: inferPublicationTags(paper)
+    };
+
+    publications.push(publication);
+    keys.forEach((key) => index.set(key, publication));
+  }
+
+  return {
+    publications: publications.sort(comparePublications),
+    duplicates
+  };
+}
+
+function getPublicationKeys(paper) {
+  const doi = normalizeDoi(paper.doiUrl);
+  const title = normalizeTitle(paper.title);
+
+  return uniqueValues([
+    doi ? `doi:${doi}` : '',
+    title ? `title:${title}` : ''
+  ]);
+}
+
+function mergePublication(existing, incoming) {
+  for (const field of ['authors', 'venue', 'sourceUrl', 'doiUrl', 'publicationDate']) {
+    if (!existing[field] && incoming[field]) {
+      existing[field] = incoming[field];
+    }
+  }
+
+  existing.researcherIds = uniqueValues([
+    ...(existing.researcherIds || []),
+    existing.researcherId,
+    incoming.researcherId
+  ]);
+  existing.researcherNames = uniqueValues([
+    ...(existing.researcherNames || []),
+    existing.researcherName,
+    incoming.researcherName
+  ]);
+  existing.tags = uniqueValues([
+    ...(existing.tags || []),
+    ...inferPublicationTags(incoming)
+  ]);
+}
+
+function comparePublications(a, b) {
+  const dateA = a.publicationDate || `${a.year || '0000'}-01-01`;
+  const dateB = b.publicationDate || `${b.year || '0000'}-01-01`;
+
+  if (dateA !== dateB) {
+    return dateA > dateB ? -1 : 1;
+  }
+
+  return String(a.title || '').localeCompare(String(b.title || ''));
+}
+
+function inferPublicationTags(paper) {
+  const text = normalizeText(`${paper.title || ''} ${paper.venue || ''}`);
+  const tags = [];
+
+  if (/\b(auv|marine|ocean|underwater|sonar)\b/.test(text)) tags.push('marine');
+  if (/\bslam\b|locali[sz]ation|navigation/.test(text)) tags.push('slam');
+  if (/education|curriculum|course|teaching|learning/.test(text)) tags.push('education');
+  if (/autonom/.test(text)) tags.push('autonomy');
+  if (/perception|vision|lidar|laser|sensor|scan/.test(text)) tags.push('perception');
+
+  return tags;
+}
+
+function normalizeDoi(value = '') {
+  return String(value)
+    .trim()
+    .toLowerCase()
+    .replace(/^https?:\/\/(dx\.)?doi\.org\//, '')
+    .replace(/^doi:/, '')
+    .replace(/\/$/, '');
+}
+
+function normalizeTitle(value = '') {
+  return normalizeText(value).replace(/[^a-z0-9]+/g, ' ').trim();
+}
+
+function normalizeText(value = '') {
+  return String(value)
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .trim();
+}
+
+function uniqueValues(values) {
+  return values.filter(Boolean).filter((value, index, list) => list.indexOf(value) === index);
 }

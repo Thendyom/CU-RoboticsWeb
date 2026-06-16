@@ -22,8 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function renderPublications() {
   const target = document.getElementById('publication-list');
-  const data = window.RIS_REVIEWED_DATA;
-  const publications = data?.publications;
+  const generatedPublications = window.RIS_GENERATED_PUBLICATIONS?.publications;
+  const reviewedPublications = window.RIS_REVIEWED_DATA?.publications;
+  const publications = Array.isArray(generatedPublications) && generatedPublications.length
+    ? generatedPublications
+    : reviewedPublications;
 
   if (!target || !Array.isArray(publications)) return;
 
@@ -31,7 +34,7 @@ function renderPublications() {
   publications.forEach((publication) => {
     const article = document.createElement('article');
     article.className = 'pub-card';
-    article.dataset.tags = publication.tags.join(' ');
+    article.dataset.tags = Array.isArray(publication.tags) ? publication.tags.join(' ') : '';
 
     const body = document.createElement('div');
 
@@ -44,17 +47,22 @@ function renderPublications() {
 
     const meta = document.createElement('p');
     meta.className = 'pub-meta';
-    meta.textContent = `${publication.authors} | ${publication.venue}`;
+    meta.textContent = [publication.authors, publication.venue].filter(Boolean).join(' | ');
 
     body.append(year, title, meta);
 
-    const link = document.createElement('a');
-    link.href = publication.doiUrl || publication.scholarUrl || publication.sourceUrl;
-    link.target = '_blank';
-    link.rel = 'noopener';
-    link.textContent = publication.doiUrl ? 'DOI' : 'Source';
+    const href = publication.doiUrl || publication.scholarUrl || publication.sourceUrl;
+    if (href) {
+      const link = document.createElement('a');
+      link.href = href;
+      link.target = '_blank';
+      link.rel = 'noopener';
+      link.textContent = publication.doiUrl ? 'DOI' : 'Source';
 
-    article.append(body, link);
+      article.append(body, link);
+    } else {
+      article.append(body);
+    }
     target.append(article);
   });
 }

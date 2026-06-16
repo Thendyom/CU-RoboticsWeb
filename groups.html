@@ -10,8 +10,6 @@
   <meta property="og:description" content="Constructor University robotics research groups, focus areas, and official references.">
   <meta property="og:type" content="website">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23008CE2'/%3E%3Cpath d='M8 10h16v2H8zm0 5h16v2H8zm0 5h10v2H8z' fill='white'/%3E%3C/svg%3E">
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-  <style>/* load system fonts only to avoid external deps */</style>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -28,7 +26,8 @@
       <a href="people.html">People</a>
       <a href="publications.html">Publications</a>
       <a href="news.html">Students</a>
-      <a href="https://constructor.university/" target="_blank" rel="noopener">Official</a>
+      <a href="graduate-paths.html">Graduate Paths</a>
+      <a href="https://constructor.university/" target="_blank" rel="noopener">University</a>
     </nav>
   </div>
 </header>
@@ -37,17 +36,25 @@
   <section class="page-intro">
     <p class="eyebrow">Groups</p>
     <h1>Research groups</h1>
-    <p>The directory starts with Marine Systems and Robotics, the group most closely tied to the Maurelli publication focus.</p>
+    <p>Marine Systems and Robotics connects RIS with research in autonomous platforms, navigation, perception, data fusion, and field robotics.</p>
   </section>
 
   <section class="section">
-    <div id="group-cards" class="card-grid" aria-live="polite"></div>
+    <div id="group-cards" class="card-grid" aria-live="polite">
+      <noscript>
+        <article class="card project-card">
+          <p class="eyebrow">Research group</p>
+          <h2>Marine Systems and Robotics</h2>
+          <p>Research in autonomous platforms, navigation, perception, data fusion, and field robotics.</p>
+          <p class="links"><a href="groups/marine-systems-and-robotics.html">Group page</a></p>
+        </article>
+      </noscript>
+    </div>
   </section>
 </main>
 <footer class="site-footer" role="contentinfo">
   <div class="container footer-inner">
     <p><strong><a href="https://constructor.university/" target="_blank" rel="noopener">Constructor University Bremen</a></strong> | Robotics and Intelligent Systems</p>
-    <p><small>Research group information is checked against public Constructor University pages.</small></p>
   </div>
 </footer>
 <script src="assets/js/reviewed-data.js"></script>
@@ -57,7 +64,7 @@
     var el = document.getElementById('group-cards');
     var groups = window.RIS_REVIEWED_DATA && window.RIS_REVIEWED_DATA.groups;
     if (!Array.isArray(groups) || groups.length === 0) {
-      el.innerHTML = '<p>No reviewed groups listed yet.</p>';
+      el.innerHTML = '<p>No research groups listed yet.</p>';
       return;
     }
     el.innerHTML = groups.map(function (group) {

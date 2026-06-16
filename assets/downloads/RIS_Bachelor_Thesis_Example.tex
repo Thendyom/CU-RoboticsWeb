@@ -1,0 +1,496 @@
+\documentclass[a4paper,11pt,oneside]{article}
+
+% Bachelor-thesis example for Robotics and Intelligent Systems.
+% Its structure and practical notes are informed by experience gained while
+% preparing a thesis, but the example is intentionally independent of any
+% particular research topic, dataset, robot, or application.
+%
+% Replace the example metadata, research content, figures, results, and
+% references with material from your own work. Confirm current submission
+% requirements and declaration wording with the university before submission.
+%
+% Recommended build command:
+%   latexmk -pdf -interaction=nonstopmode -file-line-error \
+%     -outdir=build RIS_Bachelor_Thesis_Example.tex
+%
+% Practical lesson: compile frequently, use version control, and keep a
+% written TODO list for missing evidence, figures, citations, and validation.
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[a4paper,top=3cm,bottom=3cm,left=3cm,right=3cm]{geometry}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{helvet}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage[margin=1cm]{caption}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage[most]{tcolorbox}
+\usepackage{csquotes}
+\usepackage[style=numeric,language=english]{biblatex}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\pdfadjustspacing=1
+
+\definecolor{guidanceblue}{RGB}{232,242,248}
+\definecolor{experiencegreen}{RGB}{235,244,238}
+\definecolor{codegray}{RGB}{247,247,247}
+\definecolor{linkblue}{RGB}{20,92,145}
+
+\newcommand{\mylastname}{Family Name}
+\newcommand{\myfirstname}{Given Name}
+\newcommand{\mynumber}{Matriculation Number}
+\newcommand{\myname}{\myfirstname{} \mylastname{}}
+\newcommand{\mytitle}{Design and Evaluation of an Intelligent Robotic System}
+\newcommand{\mysupervisor}{Prof.~First Name Last Name}
+\newcommand{\mysubmissiondate}{Month Year}
+
+% Guidance boxes explain the purpose of each thesis section.
+\newtcolorbox{guidance}{
+  breakable,
+  colback=guidanceblue,
+  colframe=guidanceblue,
+  boxrule=0pt,
+  arc=0pt,
+  left=8pt,
+  right=8pt,
+  top=8pt,
+  bottom=8pt,
+  before upper={\textbf{Guidance for future students.}\par\smallskip}
+}
+
+% Practical notes summarize transferable lessons from preparing a thesis.
+\newtcolorbox{experiencenote}{
+  breakable,
+  colback=experiencegreen,
+  colframe=experiencegreen,
+  boxrule=0pt,
+  arc=0pt,
+  left=8pt,
+  right=8pt,
+  top=8pt,
+  bottom=8pt,
+  before upper={\textbf{Practical lesson from thesis work.}\par\smallskip}
+}
+
+\lstset{
+  backgroundcolor=\color{codegray},
+  basicstyle=\ttfamily\small,
+  frame=single,
+  rulecolor=\color{black!20},
+  breaklines=true,
+  columns=fullflexible,
+  showstringspaces=false
+}
+
+\hypersetup{
+  pdfauthor={\myname},
+  pdftitle={\mytitle},
+  pdfkeywords={bachelor thesis, robotics, intelligent systems, research methodology},
+  colorlinks=true,
+  linkcolor=linkblue,
+  citecolor=linkblue,
+  urlcolor=linkblue
+}
+
+\addbibresource{RIS_Bachelor_Thesis_References.bib}
+
+\begin{document}
+  \pagenumbering{roman}
+
+  % Keep the title page simple. It should state who wrote the thesis, what it
+  % studies, which degree it belongs to, and who supervised it.
+  \thispagestyle{empty}
+  \begin{flushright}
+    \includegraphics[width=0.48\textwidth]{ris-bsc-logo.png}
+  \end{flushright}
+  \vspace*{32mm}
+  \begin{center}
+    \huge
+    \textbf{\mytitle}
+  \end{center}
+  \vspace*{4mm}
+  \begin{center}
+    \Large by
+  \end{center}
+  \vspace*{4mm}
+  \begin{center}
+    \LARGE
+    \textbf{\myname}
+  \end{center}
+  \vspace*{18mm}
+  \begin{center}
+    \Large
+    Bachelor Thesis \\[2ex]
+    Robotics and Intelligent Systems
+  \end{center}
+  \vfill
+  \begin{flushleft}
+    \large
+    Submission: \mysubmissiondate \hfill Supervisor: \mysupervisor \\
+    \rule{\textwidth}{1pt}
+  \end{flushleft}
+  \begin{center}
+    Robotics and Intelligent Systems, Constructor University
+  \end{center}
+
+  \newpage
+  \thispagestyle{empty}
+
+  % Confirm the current statutory-declaration wording with the university
+  % before submission. Do not silently reuse an outdated declaration.
+  \begin{center}
+    \Large \textbf{Statutory Declaration}
+    \vspace*{8mm}
+  \end{center}
+
+  \begin{center}
+    \begin{tabular}{|l|p{85mm}|}
+      \hline
+      Family Name, Given/First Name & \mylastname, \myfirstname \\
+      Matriculation number & \mynumber \\
+      Kind of thesis submitted & Bachelor Thesis \\
+      \hline
+    \end{tabular}
+    \vspace*{8mm}
+  \end{center}
+
+  \subsection*{English: Declaration of Authorship}
+
+  I hereby declare that the thesis submitted was created and written
+  solely by myself without any external support. Any sources, direct
+  or indirect, are marked as such. I am aware of the fact that the
+  contents of the thesis in digital form may be revised with regard to
+  usage of unauthorized aid as well as whether the whole or parts of
+  it may be identified as plagiarism. I do agree my work to be entered
+  into a database for it to be compared with existing sources, where
+  it will remain in order to enable further comparisons with future
+  theses. This does not grant any rights of reproduction and usage,
+  however.
+
+  This document was neither presented to any other examination board
+  nor has it been published.
+
+  \subsection*{German: Erklärung der Autorenschaft (Urheberschaft)}
+
+  Ich erkläre hiermit, dass die vorliegende Arbeit ohne fremde Hilfe
+  ausschließlich von mir erstellt und geschrieben worden ist. Jedwede
+  verwendeten Quellen, direkter oder indirekter Art, sind als solche
+  kenntlich gemacht worden. Mir ist die Tatsache bewusst, dass der
+  Inhalt der Thesis in digitaler Form geprüft werden kann im Hinblick
+  darauf, ob es sich ganz oder in Teilen um ein Plagiat handelt. Ich
+  bin damit einverstanden, dass meine Arbeit in einer Datenbank
+  eingegeben werden kann, um mit bereits bestehenden Quellen
+  verglichen zu werden und dort auch verbleibt, um mit zukünftigen
+  Arbeiten verglichen werden zu können. Dies berechtigt jedoch nicht
+  zur Verwendung oder Vervielfältigung.
+
+  Diese Arbeit wurde noch keiner anderen Prüfungsbehörde vorgelegt
+  noch wurde sie bisher veröffentlicht.
+
+  \vspace{20mm}
+  \dotfill\\
+  Date, Signature
+
+  \newpage
+
+  \section*{Abstract}
+
+  \begin{guidance}
+  Write the abstract last. It should stand on its own and answer five questions:
+  What problem did you study? Why does it matter? What did you do? What did you
+  find? What is the main limitation? Use exact, bounded claims. Avoid turning
+  the abstract into a list of chapters or introducing terms that are not
+  explained within the abstract.
+
+  A useful structure is one short motivation paragraph, one method paragraph,
+  and one results-and-meaning paragraph. Target roughly 150--250 words unless
+  your program specifies otherwise.
+  \end{guidance}
+
+  \begin{experiencenote}
+  A clear abstract became much easier to write after separating the main
+  investigation from optional exploratory work. When two parts answer different
+  questions or rely on different levels of evidence, they should not be
+  presented as one equally supported result.
+  \end{experiencenote}
+
+  \textit{Example opening:}
+  Autonomous and intelligent systems must perform reliably under practical
+  constraints. This thesis investigates whether a proposed robotic subsystem
+  can satisfy a defined task objective while remaining sufficiently robust and
+  resource-efficient for its intended operating context.
+
+  \newpage
+  \tableofcontents
+
+  \clearpage
+  \pagenumbering{arabic}
+
+  \section{Introduction}
+
+  \begin{guidance}
+  Introduce the practical problem before the implementation. A reader should
+  understand the system context, stakeholders, intended behavior, and exact
+  thesis goal before encountering algorithms, hardware, or architecture
+  details. End the introduction with explicit research questions, the scope,
+  and a concise list of contributions.
+
+  Define the goal early and make it testable. State what the system should do,
+  under which conditions, and how success will be judged. Also state what the
+  thesis does not attempt to solve. Clear boundaries make later design and
+  evaluation decisions easier to justify.
+  \end{guidance}
+
+  \begin{experiencenote}
+  The largest improvement to the overall structure came from writing the goal
+  as one precise sentence before expanding the technical chapters. Whenever a
+  section did not help define, implement, or evaluate that goal, it was either
+  shortened, moved, or removed.
+  \end{experiencenote}
+
+  \subsection{Example Research Questions}
+
+  \begin{enumerate}[label=\textbf{RQ\arabic*:}]
+    \item Can the proposed system perform the defined task under the stated
+      operating conditions?
+    \item Which design choices have the greatest effect on task performance,
+      robustness, and resource use?
+    \item Where does the system fail, and what do those failures imply for
+      practical use?
+  \end{enumerate}
+
+  \subsection{Example Scope Statement}
+
+  This thesis covers the design, implementation, and controlled evaluation of
+  one robotic or intelligent subsystem. Integration assumptions and relevant
+  interfaces are documented, but full product development, certification, and
+  unrestricted real-world deployment are outside the scope.
+
+  \section{Statement and Motivation of Research}
+
+  \begin{guidance}
+  Explain why the research question is worth answering and position it against
+  the existing literature. Organize related work by ideas or assumptions, not
+  as one paragraph per paper. State what remains unknown after the literature
+  review and show how your experiment addresses that gap.
+
+  Keep motivation, related work, and thesis positioning distinct:
+  \begin{itemize}
+    \item \textbf{Motivation:} why the problem matters in its system context;
+    \item \textbf{Related work:} what existing approaches already establish;
+    \item \textbf{Positioning:} the specific unresolved question your thesis tests.
+  \end{itemize}
+  \end{guidance}
+
+  \begin{experiencenote}
+  The literature review became more useful when each group of sources led to a
+  design decision, hypothesis, or evaluation criterion. Sources that did not
+  affect the investigation were summarized briefly instead of being given equal
+  space.
+  \end{experiencenote}
+
+  \textit{Example positioning statement:}
+  Existing work demonstrates several approaches to this class of robotic
+  problem. However, their trade-offs under the constraints of the intended
+  operating context remain unclear. This thesis therefore compares selected
+  design choices under a shared evaluation protocol.
+
+  \section{Description of the Investigation}
+
+  \begin{guidance}
+  This is the technical core. Describe the system and investigation so another
+  researcher could reproduce the work and understand why each design decision
+  was made. Include:
+  \begin{itemize}
+    \item requirements, assumptions, and success criteria;
+    \item the system architecture and interfaces between components;
+    \item hardware, software, data, and operating conditions;
+    \item implementation decisions and relevant alternatives;
+    \item the experimental protocol, baselines, and controlled variants;
+    \item evaluation metrics, repeated trials, and logging procedures.
+  \end{itemize}
+
+  When comparing design choices, change as few factors as possible at once.
+  Keep an explicit experiment map showing what remains fixed. Store exact
+  configurations, source code, calibration values, and evaluation logs outside
+  the document so that the written account can be checked against the work that
+  was actually executed.
+  \end{guidance}
+
+  \begin{experiencenote}
+  Comparisons were easiest to explain when the baseline and all fixed conditions
+  were documented before new variants were tested. If multiple components,
+  parameters, and operating conditions change together, the reason for an
+  improvement or failure remains ambiguous.
+  \end{experiencenote}
+
+  \subsection{Example Investigation Sequence}
+
+  \begin{table}[ht]
+    \centering
+    \small
+    \begin{tabularx}{\textwidth}{lYYY}
+      \toprule
+      Stage & Main activity & Fixed reference & Question answered \\
+      \midrule
+      1 & Define baseline & Requirements and test protocol & What can the simplest valid system achieve? \\
+      2 & Compare core designs & Baseline conditions & Which architectural choice matters most? \\
+      3 & Stress-test the system & Selected design and metrics & How robust is it outside nominal conditions? \\
+      4 & Analyze failures & Saved trials and logs & Why and where does the system fail? \\
+      \bottomrule
+    \end{tabularx}
+    \caption{Example investigation map. The sequence connects each stage to a
+      specific question and keeps comparisons interpretable.}
+  \end{table}
+
+  \subsection{Example Reproducibility Checklist}
+
+  \begin{lstlisting}[language={}]
+requirements and interface definitions
+hardware setup, calibration, and operating conditions
+data sources, selection rules, and test scenarios
+software configuration and random seeds
+software and hardware versions
+baseline definition and comparison protocol
+metric implementation and success thresholds
+saved logs and outputs for headline results
+  \end{lstlisting}
+
+  \section{Evaluation of the Investigation}
+
+  \begin{guidance}
+  Present results in the same order as the research questions and experiment
+  sequence. Lead with the claim supported by each table or figure, then explain
+  the evidence and its limits. Do not report only the best model.
+
+  Select metrics that match the intended use. Depending on the project, these
+  may include task success, estimation error, latency, energy use, robustness,
+  safety-related events, or human interaction quality. Report variation across
+  repeated trials and relevant operating conditions, not only a single average.
+
+  Distinguish a measured result from an inferred explanation. Measurements can
+  demonstrate what happened under the test protocol; additional evidence is
+  needed to establish why it happened or whether it generalizes.
+  \end{guidance}
+
+  \begin{experiencenote}
+  A result table became much more informative after adding the intended role of
+  each system variant and the conditions under which it was tested. The best
+  average score was not automatically the best practical choice when resource
+  use, consistency, or failure severity were also important.
+  \end{experiencenote}
+
+  \subsection{Example Evaluation Matrix}
+
+  \begin{table}[ht]
+    \centering
+    \small
+    \begin{tabularx}{\textwidth}{YYYY}
+      \toprule
+      Objective & Measure & Comparison & Evidence to report \\
+      \midrule
+      Task performance & Project-specific success metric & Baseline and selected variants & Summary statistics and trial-level results \\
+      Robustness & Performance across conditions & Nominal versus stressed operation & Condition-wise plots and failure examples \\
+      Efficiency & Latency, memory, or energy & Equivalent task settings & Measured resource use and hardware details \\
+      Practical suitability & Requirements satisfied & Intended use and constraints & Trade-off discussion and remaining gaps \\
+      \bottomrule
+    \end{tabularx}
+    \caption{Example evaluation matrix. Replace the generic entries with metrics
+      and evidence that match the actual thesis goal.}
+  \end{table}
+
+  \section{Discussion and Limitations}
+
+  \begin{guidance}
+  Discussion is not a second results section. Explain what the results mean,
+  which claims are strongly supported, what alternative explanations remain,
+  and where the evidence does not generalize. Connect each limitation to a
+  concrete consequence for interpretation or future validation.
+
+  Useful categories include assumptions, test-environment coverage, data or
+  scenario bias, measurement quality, statistical stability, hardware and
+  software constraints, safety, human factors, and mismatch between the
+  research prototype and the intended real system.
+  \end{guidance}
+
+  \begin{experiencenote}
+  Limitations were strongest when each one stated its consequence. For example,
+  testing only in a controlled environment does not merely reduce variety; it
+  means the evidence cannot support unrestricted real-world reliability claims.
+  Clear limitations improve the credibility of the supported conclusions.
+  \end{experiencenote}
+
+  \section{Conclusion and Future Work}
+
+  \begin{guidance}
+  Answer the research questions directly. State the strongest supported result,
+  the practical recommendation, and the main boundary of the evidence. Future
+  work should follow from missing evidence identified in the limitations, not
+  from a generic list of possible extensions.
+
+  A useful final paragraph states what you would do first if the project
+  continued tomorrow.
+  \end{guidance}
+
+  \begin{experiencenote}
+  A useful conclusion was easier to write by answering each research question in
+  one or two direct sentences before creating the surrounding narrative. Future
+  work then followed naturally from the most important missing evidence rather
+  than from a generic wish list.
+  \end{experiencenote}
+
+  \textit{Example final answer:}
+  Under the stated test conditions, the proposed system satisfies the primary
+  task objective and improves on the defined baseline. The selected design is
+  therefore a suitable basis for further investigation. This conclusion remains
+  limited by the evaluated scenarios and requires broader system-level
+  validation before practical deployment claims are justified.
+
+  \newpage
+  % These example references demonstrate the connected bibliography. Replace
+  % them with literature relevant to the student's own thesis.
+  \nocite{siciliano2016springer,thrun2005probabilistic,russell2021artificial}
+  \printbibliography
+
+  \clearpage
+  \appendix
+
+  \section{What Belongs in the Appendix}
+
+  \begin{guidance}
+  Use the appendix for material needed to audit or reproduce the thesis without
+  interrupting the main argument. Examples include full result tables,
+  additional trials, parameter tables, interface details, calibration
+  procedures, questionnaires, safety analyses, and implementation notes. Refer
+  to every useful appendix item from the main text.
+  \end{guidance}
+
+  \begin{experiencenote}
+  Moving large supporting tables and detailed configurations to the appendix
+  made the main argument easier to follow while preserving the information
+  needed to audit and reproduce the work.
+  \end{experiencenote}
+
+  \section{Final Submission Checklist}
+
+  \begin{itemize}
+    \item Every research question is answered in the conclusion.
+    \item Every headline claim points to a table, figure, or cited source.
+    \item Main and exploratory evidence are clearly separated.
+    \item Requirements, assumptions, interfaces, and success criteria are explicit.
+    \item Test conditions, configurations, metrics, and repeated trials are documented.
+    \item Limitations qualify the claims rather than appearing as disclaimers.
+    \item Figures and tables are readable without relying on the surrounding text.
+    \item Bibliography entries compile and all citations are used correctly.
+    \item The final PDF is checked page by page after compilation.
+  \end{itemize}
+
+\end{document}

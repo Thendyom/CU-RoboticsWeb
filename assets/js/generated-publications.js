@@ -1,12 +1,7 @@
-{
+window.RIS_GENERATED_PUBLICATIONS = {
   "generatedAt": "2026-06-01T12:11:52.836Z",
   "status": "ok",
   "provider": "semantic-scholar",
-  "notes": [
-    "Publications are generated from free scholarly APIs and mirrored into assets/js/generated-publications.js for the visible site.",
-    "Papers are deduplicated by DOI and normalized title before publishing.",
-    "Use stable author IDs when possible. Name-only searches can match the wrong researcher."
-  ],
   "authors": [
     {
       "id": "francesco-maurelli",
@@ -17,7 +12,7 @@
       "paperCount": 68
     }
   ],
-  "candidates": [
+  "publications": [
     {
       "researcherId": "francesco-maurelli",
       "researcherName": "Francesco Maurelli",
@@ -445,7 +440,5 @@
         "autonomy"
       ]
     }
-  ],
-  "duplicateCount": 0,
-  "duplicates": []
-}
+  ]
+};

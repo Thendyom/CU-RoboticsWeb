@@ -2,15 +2,16 @@
 
 Static website for the Robotics and Intelligent Systems program at Constructor University.
 
-The site is a small academic hub for RIS: program context, people, research areas, selected publications, and practical student links. It is intentionally text-first for now. Photos are not used in the visible pages.
+The site is a small academic hub for RIS: program context, people, research areas, selected publications, graduate paths, and practical student links. Its visual approach is text-first, without photos on the visible pages.
 
 ## Pages
 
 - `index.html` - program overview and student-oriented introduction.
 - `people.html` - program chairs and the Marine Systems and Robotics group.
 - `projects.html` - research areas and example project directions.
-- `publications.html` - selected publications, currently centered on Prof. Dr. Francesco Maurelli.
-- `news.html` - student-facing starting points, research preparation, and official links.
+- `publications.html` - selected publications from tracked RIS faculty publication sources.
+- `news.html` - student-facing starting points, research preparation, and a bachelor's thesis framework.
+- `graduate-paths.html` - possible next steps and, when available, graduate destinations grouped by class year.
 - `groups.html` - research group overview.
 - `groups/marine-systems-and-robotics.html` - Marine Systems and Robotics group page.
 
@@ -23,23 +24,27 @@ Main files:
 - `assets/css/styles.css`
 - `assets/js/main.js`
 - `assets/js/reviewed-data.js`
+- `assets/js/generated-publications.js`
+- `assets/downloads/RIS_Bachelor_Thesis_Example_Bundle.zip`
 - `assets/data/publication-authors.json`
 - `assets/data/publication-candidates.json`
 - `scripts/update-publication-candidates.mjs`
 - `CONTENT_REVIEW.md`
 
-## Publication Candidate Updates
+## Publication Updates
 
-The site can refresh publication candidates once a month through GitHub Actions.
+The site can refresh publication data once a month through GitHub Actions.
 
 - Workflow: `.github/workflows/publication-candidates.yml`
 - Schedule: first day of each month at 06:17 UTC
 - Default provider: Semantic Scholar public API
-- Output: `assets/data/publication-candidates.json`
+- Outputs: `assets/data/publication-candidates.json` and `assets/js/generated-publications.js`
 
-The workflow does not publish new papers directly to the visible site. It only updates the candidate file. Reviewed publications should still be copied into `assets/js/reviewed-data.js` after checking the author match, title, venue, year, and source link.
+The workflow now publishes the generated publication list directly to the visible site through `assets/js/generated-publications.js`. The older reviewed publication entries in `assets/js/reviewed-data.js` remain as a fallback when the generated file is empty or has not run yet.
 
-The tracked author list for the candidate updater lives in `assets/data/publication-authors.json`. It currently contains one enabled author: Francesco Maurelli. Co-authors appear in the reviewed publication cards, but they are not tracked as RIS authors by the updater unless they are added and reviewed separately.
+The tracked author list for the updater lives in `assets/data/publication-authors.json`. It currently contains one enabled author: Francesco Maurelli. Add more professors as additional enabled authors. Use stable Semantic Scholar or OpenAlex author IDs where possible; name-only searches can match the wrong researcher.
+
+Generated papers are deduplicated before display. The updater first matches DOI values when available, then normalized paper titles, so co-authored papers from multiple tracked professors should appear once.
 
 To test the updater without making API calls:
 
@@ -65,7 +70,7 @@ After Pages is enabled, the public site should be available at:
 
 ## Content Notes
 
-Program and people information should be checked against the official Constructor University pages and current RIS handbook before publishing major edits. Publications are intentionally centered on Prof. Dr. Francesco Maurelli.
+Program and people information should be checked against the official Constructor University pages and current RIS handbook before publishing major edits. Generated publication updates should use stable author IDs where possible and be spot-checked after changing the tracked author list.
 
 Use `CONTENT_REVIEW.md` to track reviewed claims and sources. Use `assets/js/reviewed-data.js` for people, group, and publication entries that should be easier to maintain later.
 
