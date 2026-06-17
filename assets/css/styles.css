@@ -741,7 +741,7 @@ ul{margin-top:.4rem}
   border-bottom:1px solid var(--line);
 }
 .alumni-ledger .destination-list{
-  border-top:0;
+  border-top:1px solid var(--line);
   background:linear-gradient(180deg,#FFFFFF 0,#FFFCF4 100%);
 }
 .alumni-ledger .destination-entry{
