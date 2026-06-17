@@ -741,31 +741,14 @@ ul{margin-top:.4rem}
   border-bottom:1px solid var(--line);
 }
 .alumni-ledger .destination-list{
-  display:grid;
-  gap:14px;
-  border-top:0;
-  background:transparent;
+  border-top:3px double var(--gold);
+  background:linear-gradient(180deg,#FFFFFF 0,#FFFCF4 100%);
 }
 .alumni-ledger .destination-entry{
-  position:relative;
-  grid-template-columns:minmax(0,1fr) minmax(220px,.56fr);
-  gap:22px;
-  align-items:stretch;
-  min-width:0;
-  padding:24px;
-  border:1px solid var(--line);
-  border-left:5px solid var(--navy);
-  border-radius:6px;
-  background:#fff;
-  box-shadow:0 12px 32px rgba(17,24,39,.08);
-}
-.alumni-ledger .section-heading + .destination-year .destination-entry:first-child{
-  border-left-color:var(--constructor-yellow);
-  background:linear-gradient(90deg,#FFFCF4 0,#FFFFFF 38%);
+  padding:28px 22px;
 }
 .destination-entry-placeholder{
-  border-left-color:var(--gold);
-  background:#FFFCF4;
+  background:rgba(245,241,232,.62);
 }
 .destination-name{
   margin:0 0 5px;
@@ -776,62 +759,16 @@ ul{margin-top:.4rem}
   text-transform:uppercase;
 }
 .destination-entry h3{font-size:1.5rem}
-.alumni-ledger .destination-name{
-  margin-bottom:8px;
-  color:var(--ink);
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:1.42rem;
-  font-weight:700;
-  letter-spacing:0;
-  line-height:1.05;
-  text-transform:none;
-}
-.alumni-ledger .destination-entry h3{
-  max-width:680px;
-  color:#334155;
-  font-family:Inter,Aptos,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  font-size:1rem;
-  font-weight:740;
-  line-height:1.34;
-  overflow-wrap:break-word;
-}
 .destination-type{
   margin:8px 0 0;
   color:var(--muted);
   font-size:.86rem;
   font-weight:720;
 }
-.alumni-ledger .destination-type{
-  display:inline-flex;
-  width:max-content;
-  max-width:100%;
-  margin-top:14px;
-  padding:5px 10px;
-  border:1px solid #D9E4EF;
-  border-radius:999px;
-  background:#F7FAFC;
-  color:var(--navy);
-  font-size:.78rem;
-  font-weight:820;
-}
 .destination-place{
   margin:0;
   color:var(--navy);
   font-weight:760;
-}
-.alumni-ledger .destination-place{
-  display:grid;
-  align-content:center;
-  min-width:0;
-  margin:0;
-  padding:18px;
-  border:1px solid #D9E4EF;
-  border-radius:6px;
-  background:#F7FAFC;
-  color:var(--navy);
-  font-size:1.02rem;
-  line-height:1.28;
-  overflow-wrap:break-word;
 }
 .destination-place span{
   display:block;
@@ -839,10 +776,6 @@ ul{margin-top:.4rem}
   color:var(--muted);
   font-size:.88rem;
   font-weight:650;
-}
-.alumni-ledger .destination-place span{
-  margin-top:7px;
-  color:#5B6675;
 }
 .sources{padding-top:34px}
 .sources h2{
@@ -1027,15 +960,6 @@ ul{margin-top:.4rem}
   }
   .graduate-destinations{padding:22px}
   .destination-entry{gap:12px}
-  .alumni-ledger .destination-entry{
-    padding:18px;
-  }
-  .alumni-ledger .destination-place{
-    padding:14px;
-  }
-  .alumni-ledger .destination-name{
-    font-size:1.24rem;
-  }
   .brand-mark{width:38px;height:38px}
   .brand-text{font-size:.92rem;max-width:178px}
   .footer-inner{padding:24px var(--page-gutter)}
