@@ -1,6 +1,6 @@
 {
-  "provider": "semantic-scholar",
-  "maxPapersPerAuthor": 20,
+  "provider": "openalex",
+  "maxPapersPerAuthor": 50,
   "authors": [
     {
       "id": "francesco-maurelli",
@@ -8,7 +8,15 @@
       "enabled": true,
       "affiliationHint": "Constructor University",
       "semanticScholarAuthorId": "",
-      "openAlexAuthorId": ""
+      "openAlexAuthorId": "https://openalex.org/A5023480949"
+    },
+    {
+      "id": "jakob-suchan",
+      "name": "Jakob Suchan",
+      "enabled": true,
+      "affiliationHint": "Constructor University",
+      "semanticScholarAuthorId": "",
+      "openAlexAuthorId": "https://openalex.org/A5069718093"
     }
   ]
 }
