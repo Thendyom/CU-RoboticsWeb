@@ -38,7 +38,7 @@ Last full review pass: 2026-06-17
 | `groups/marine-systems-and-robotics.html` | Reviewed | Placeholder content replaced with reviewed MSR facts. |
 | `groups/dummi-1.html` | Placeholder | Demo group page only; replace with reviewed content before treating as a real group. |
 | `groups/dummi-2.html` | Placeholder | Demo group page only; replace with reviewed content before treating as a real group. |
-| `graduate-paths.html` | Reviewed | Presents possible directions without claiming unverified graduate outcomes. Add individual entries only after the graduate has shared them. |
+| `graduate-paths.html` | Needs verification | Visible page renamed to Alumni Paths. Includes user-provided alumni entries and one clearly marked placeholder destination; verify named outcomes before treating as reviewed. |
 | `.github/workflows/publication-candidates.yml` | Reviewed | Monthly publication refresh writes raw candidates and generated site data. |
 
 ## Writing Rules
@@ -52,4 +52,4 @@ Last full review pass: 2026-06-17
 - Do not add person or research photos in this pass.
 - Use the reviewed data file for maintainable people and group entries, and as a publication fallback.
 - Spot-check monthly publication API results after adding or changing tracked authors.
-- Publish graduate destinations only after the graduate has shared the name, class year, next step, and destination.
+- Publish alumni destinations only after the alumnus has shared the name, class year, next step, and destination.

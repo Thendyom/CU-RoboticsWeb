@@ -2,7 +2,7 @@
 
 Static website for the Robotics and Intelligent Systems program at Constructor University.
 
-The site is a small academic hub for RIS: program context, people, research areas, selected publications, graduate paths, and practical student links. Its visual approach is text-first, without photos on the visible pages.
+The site is a small academic hub for RIS: program context, people, research areas, selected publications, alumni paths, and practical student links. Its visual approach is text-first, without photos on the visible pages.
 
 ## Pages
 
@@ -11,7 +11,7 @@ The site is a small academic hub for RIS: program context, people, research area
 - `projects.html` - machine-intelligence-oriented research group hub, research areas, and example project directions.
 - `publications.html` - selected publications from tracked RIS faculty publication sources.
 - `news.html` - student-facing starting points, research preparation, and a bachelor's thesis framework.
-- `graduate-paths.html` - possible next steps and, when available, graduate destinations grouped by class year.
+- `graduate-paths.html` - alumni next steps and, when available, destinations grouped by class year.
 - `groups.html` - supporting reviewed-data group overview.
 - `groups/marine-systems-and-robotics.html` - Marine Systems and Robotics group page.
 - `groups/dummi-1.html` and `groups/dummi-2.html` - placeholder group pages for testing the Research hub structure.

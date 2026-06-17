@@ -699,6 +699,16 @@ ul{margin-top:.4rem}
   gap:34px;
   align-items:start;
 }
+.alumni-ledger .destination-year{
+  margin-top:34px;
+  padding-top:30px;
+  border-top:1px solid var(--line);
+}
+.alumni-ledger .section-heading + .destination-year{
+  margin-top:0;
+  padding-top:0;
+  border-top:0;
+}
 .year-marker{
   position:sticky;
   top:108px;
@@ -729,6 +739,19 @@ ul{margin-top:.4rem}
   align-items:center;
   padding:24px 0;
   border-bottom:1px solid var(--line);
+}
+.alumni-ledger .destination-list{
+  border-top:3px double var(--gold);
+  background:linear-gradient(180deg,#FFFFFF 0,#FFFCF4 100%);
+}
+.alumni-ledger .destination-entry{
+  padding:28px 22px;
+}
+.alumni-ledger .section-heading + .destination-year .destination-entry:first-child{
+  box-shadow:inset 4px 0 0 var(--constructor-yellow);
+}
+.destination-entry-placeholder{
+  background:rgba(245,241,232,.62);
 }
 .destination-name{
   margin:0 0 5px;
