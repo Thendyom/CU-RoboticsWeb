@@ -617,7 +617,7 @@ ul{margin-top:.4rem}
 .hub-intro{max-width:1000px}
 .research-directory{
   display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
   gap:18px;
   padding-top:18px;
 }
