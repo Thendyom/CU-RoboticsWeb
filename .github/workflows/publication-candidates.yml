@@ -22,8 +22,9 @@ jobs:
 
       - name: Refresh publication candidates
         env:
-          PUBLICATION_PROVIDER: semantic-scholar
-          SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
+          # OpenAlex is the configured source for this repository and this
+          # monthly run stays within its free usage allowance.
+          PUBLICATION_PROVIDER: openalex
           OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
         run: node scripts/update-publication-candidates.mjs
 
