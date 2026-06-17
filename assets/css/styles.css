@@ -684,6 +684,11 @@ ul{margin-top:.4rem}
 .site-footer p{margin:0}
 .site-footer a{color:#fff}
 .site-footer small{color:#C8D2DC}
+.site-footer .site-disclaimer{
+  margin-top:8px;
+  color:#C8D2DC;
+  font-size:.9rem;
+}
 
 @media (max-width:920px){
   .container{padding:0 20px}
