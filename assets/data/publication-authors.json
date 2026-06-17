@@ -1,6 +1,6 @@
 {
   "provider": "openalex",
-  "maxPapersPerAuthor": 20,
+  "maxPapersPerAuthor": 50,
   "authors": [
     {
       "id": "francesco-maurelli",

@@ -113,7 +113,7 @@ async function getSemanticScholarAuthorPapers(author, limit) {
     .map((paper) => ({
       researcherId: author.id,
       researcherName: author.name,
-      title: paper.title,
+      title: cleanTitle(paper.title),
       authors: formatSemanticScholarAuthors(paper.authors),
       year: String(paper.year),
       venue: paper.venue || paper.publicationVenue?.name || '',
@@ -168,12 +168,12 @@ async function getOpenAlexAuthorPapers(author, limit) {
   const papers = (data.results || []).map((work) => ({
     researcherId: author.id,
     researcherName: author.name,
-    title: work.display_name || '',
+    title: cleanTitle(work.display_name || ''),
     authors: (work.authorships || []).map((entry) => entry.author?.display_name).filter(Boolean).join(', '),
     year: String(work.publication_year || ''),
     venue: work.primary_location?.source?.display_name || work.host_venue?.display_name || '',
     source: 'openalex',
-    sourceUrl: work.id || '',
+    sourceUrl: work.primary_location?.landing_page_url || work.id || '',
     doiUrl: work.doi || '',
     publicationDate: work.publication_date || ''
   })).filter((paper) => paper.title && paper.year);
@@ -326,11 +326,18 @@ function inferPublicationTags(paper) {
 
   if (/\b(auv|marine|ocean|underwater|sonar)\b/.test(text)) tags.push('marine');
   if (/\bslam\b|locali[sz]ation|navigation/.test(text)) tags.push('slam');
-  if (/education|curriculum|course|teaching|learning/.test(text)) tags.push('education');
+  if (/\b(education|curriculum|course|teaching|pedagogy)\b/.test(text)) tags.push('education');
   if (/autonom/.test(text)) tags.push('autonomy');
   if (/perception|vision|lidar|laser|sensor|scan/.test(text)) tags.push('perception');
 
   return tags;
+}
+
+function cleanTitle(value = '') {
+  return String(value)
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 function normalizeDoi(value = '') {
