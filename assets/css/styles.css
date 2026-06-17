@@ -609,6 +609,68 @@ ul{margin-top:.4rem}
   font-weight:760;
 }
 
+.hub-intro{max-width:1000px}
+.research-directory{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+  padding-top:18px;
+}
+.research-card{
+  display:flex;
+  min-height:390px;
+  min-width:0;
+  flex-direction:column;
+  border:1px solid var(--line);
+  border-top:5px solid var(--constructor-teal);
+  border-radius:6px;
+  padding:28px;
+  background:#fff;
+  color:var(--graphite);
+  box-shadow:var(--shadow);
+}
+.research-card:hover{
+  text-decoration:none;
+  background:#F7FBFE;
+}
+.research-card-featured{
+  border-top-color:var(--blue);
+}
+.research-card-placeholder{
+  border-top-color:var(--constructor-yellow);
+  background:#FFFCF4;
+}
+.research-card-placeholder:nth-child(3){
+  border-top-color:var(--constructor-red);
+}
+.research-card-kicker{
+  display:block;
+  margin-bottom:18px;
+  color:var(--constructor-red-deep);
+  font-size:.78rem;
+  font-weight:840;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.research-card h2{
+  font-size:2.15rem;
+  line-height:1;
+}
+.research-card-subtitle{
+  margin:10px 0 18px;
+  color:var(--green);
+  font-weight:760;
+}
+.research-card p:not(.research-card-subtitle){
+  color:#4A5561;
+}
+.research-card .tag-row{margin-top:auto}
+.research-card strong{
+  display:inline-block;
+  margin-top:18px;
+  color:var(--navy);
+}
+
 .graduate-paths-intro{max-width:980px}
 .path-outlook{
   display:grid;
@@ -767,6 +829,7 @@ ul{margin-top:.4rem}
   .stat-grid,
   .card-grid.three,
   .project-list,
+  .research-directory,
   .split,
   .path-outlook,
   .destination-year,
@@ -800,6 +863,11 @@ ul{margin-top:.4rem}
   }
   .cta-row{align-items:stretch;flex-direction:column}
   .btn{width:100%}
+  .research-card{
+    min-height:auto;
+    padding:22px;
+  }
+  .research-card h2{font-size:1.85rem}
   .pub-card{
     grid-template-columns:1fr;
     gap:12px;

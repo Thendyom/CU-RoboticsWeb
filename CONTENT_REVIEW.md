@@ -2,7 +2,7 @@
 
 This site should only publish claims that have been checked against official or scholarly sources. The visible copy should read like it was written for students and academics, not like a generic program brochure.
 
-Last full review pass: 2026-06-14
+Last full review pass: 2026-06-17
 
 ## Source Baseline
 
@@ -12,8 +12,8 @@ Last full review pass: 2026-06-14
 | https://constructor.university/sites/default/files/2026-02/RIS_Handbook_2025_v1_2_0.pdf | Current RIS handbook, degree structure, internship, study abroad, thesis, formal module references | 2026-05-22 |
 | Provided Fall 2023 RIS handbook copy | Cross-check for the 4C model, 180 ECTS degree scope, internship, mobility window, and thesis structure | 2026-05-22 |
 | https://constructor.university/faculty-member/prof-dr-francesco-maurelli | Maurelli role, contact profile, research interests, selected publications | 2026-05-22 |
-| https://constructor.university/faculty-member/jakob-suchan | Suchan role and research profile | 2026-05-22 |
-| https://constructor.university/research/school-computer-science-engineering/marine-systems-and-robotics | Marine Systems and Robotics group themes and leadership | 2026-05-22 |
+| https://constructor.university/faculty-member/jakob-suchan | Suchan role and research profile | 2026-06-17 |
+| https://constructor.university/research/school-computer-science-engineering/marine-systems-and-robotics | Marine Systems and Robotics group themes and leadership | 2026-06-17 |
 | https://robotics.constructor.university/ | Constructor Robotics program link and wider research context | 2026-05-22 |
 | https://robotics.constructor.university/research/ | Constructor Robotics application domains | 2026-05-22 |
 | https://robotics.constructor.university/projects/ | Constructor Robotics funded project examples and listed funders | 2026-05-22 |
@@ -33,9 +33,11 @@ Last full review pass: 2026-06-14
 | `people.html` | Reviewed | Maurelli first; Suchan included only for verified program-chair context. |
 | `publications.html` | Reviewed | Renders generated publications when available, with reviewed data as fallback. |
 | `news.html` | Reviewed | Student-facing structure checked against the official RIS page and handbook. |
-| `projects.html` | Reviewed | Research domains and project examples checked against Constructor Robotics pages. |
-| `groups.html` | Reviewed | Uses reviewed data instead of `fetch()` for `file://` compatibility. |
+| `projects.html` | Reviewed | Research group hub is the primary entry point; real and placeholder groups are clearly separated. Research domains and project examples checked against Constructor Robotics pages. |
+| `groups.html` | Reviewed | Supporting reviewed-data overview; `projects.html` is the primary research-group hub. |
 | `groups/marine-systems-and-robotics.html` | Reviewed | Placeholder content replaced with reviewed MSR facts. |
+| `groups/dummi-1.html` | Placeholder | Demo group page only; replace with reviewed content before treating as a real group. |
+| `groups/dummi-2.html` | Placeholder | Demo group page only; replace with reviewed content before treating as a real group. |
 | `graduate-paths.html` | Reviewed | Presents possible directions without claiming unverified graduate outcomes. Add individual entries only after the graduate has shared them. |
 | `.github/workflows/publication-candidates.yml` | Reviewed | Monthly publication refresh writes raw candidates and generated site data. |
 

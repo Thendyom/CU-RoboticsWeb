@@ -8,12 +8,13 @@ The site is a small academic hub for RIS: program context, people, research area
 
 - `index.html` - program overview and student-oriented introduction.
 - `people.html` - program chairs and the Marine Systems and Robotics group.
-- `projects.html` - research areas and example project directions.
+- `projects.html` - machine-intelligence-oriented research group hub, research areas, and example project directions.
 - `publications.html` - selected publications from tracked RIS faculty publication sources.
 - `news.html` - student-facing starting points, research preparation, and a bachelor's thesis framework.
 - `graduate-paths.html` - possible next steps and, when available, graduate destinations grouped by class year.
-- `groups.html` - research group overview.
+- `groups.html` - supporting reviewed-data group overview.
 - `groups/marine-systems-and-robotics.html` - Marine Systems and Robotics group page.
+- `groups/dummi-1.html` and `groups/dummi-2.html` - placeholder group pages for testing the Research hub structure.
 
 ## Development
 
