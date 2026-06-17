@@ -1,5 +1,5 @@
 window.RIS_GENERATED_PUBLICATIONS = {
-  "generatedAt": "2026-06-17T08:09:37.908Z",
+  "generatedAt": "2026-06-17T08:25:09.122Z",
   "status": "ok",
   "provider": "openalex",
   "authors": [
@@ -18,6 +18,11 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "paperCount": 56
     }
   ],
+  "previousCandidateCount": 90,
+  "preservedPublicationCount": 86,
+  "newPublicationCount": 0,
+  "knownPublicationCount": 86,
+  "warningCount": 0,
   "publications": [
     {
       "researcherId": "francesco-maurelli",
@@ -201,7 +206,7 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "researcherId": "francesco-maurelli",
       "researcherName": "Francesco Maurelli",
       "title": "It’s the Way You Move: Efficient Movement Shapes Robot Perception Across Embodiments",
-      "authors": "Кristina Nikolovska, Jan Pohl, Bernhard Hommel, Francesco Maurelli, Arvid Kappas",
+      "authors": "Kristina Nikolovska, Jan Pohl, Bernhard Hommel, Francesco Maurelli, Arvid Kappas",
       "year": "2025",
       "venue": "Lecture notes in computer science",
       "source": "openalex",
@@ -260,7 +265,7 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "researcherId": "francesco-maurelli",
       "researcherName": "Francesco Maurelli",
       "title": "Selfhood-attribution in a social context: further evidence for a Pars-Pro-Toto account",
-      "authors": "Jan Pohl, Кristina Nikolovska, Francesco Maurelli, Arvid Kappas, Bernhard Hommel",
+      "authors": "Jan Pohl, Kristina Nikolovska, Francesco Maurelli, Arvid Kappas, Bernhard Hommel",
       "year": "2025",
       "venue": "Frontiers in Psychology",
       "source": "openalex",
@@ -363,7 +368,7 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "researcherId": "francesco-maurelli",
       "researcherName": "Francesco Maurelli",
       "title": "Bridging the Gap with PRoMo: What Users Expect from Robot Navigation in Shared Environments",
-      "authors": "Кristina Nikolovska, Arvid Kappas, Francesco Maurelli",
+      "authors": "Kristina Nikolovska, Arvid Kappas, Francesco Maurelli",
       "year": "2025",
       "venue": "",
       "source": "openalex",
@@ -384,7 +389,7 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "researcherId": "francesco-maurelli",
       "researcherName": "Francesco Maurelli",
       "title": "When less is more: Single selfhood-related cues elicit higher selfhood ratings than multiple cues",
-      "authors": "Jan Pohl, Кristina Nikolovska, Francesco Maurelli, Arvid Kappas, Bernhard Hommel",
+      "authors": "Jan Pohl, Kristina Nikolovska, Francesco Maurelli, Arvid Kappas, Bernhard Hommel",
       "year": "2025",
       "venue": "",
       "source": "openalex",
@@ -507,7 +512,7 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "researcherId": "francesco-maurelli",
       "researcherName": "Francesco Maurelli",
       "title": "The Impact of Social Inter-Robot Encounters on User Perception",
-      "authors": "Кristina Nikolovska, Jan Pohl, Bernhard Hommel, Arvid Kappas, Francesco Maurelli",
+      "authors": "Kristina Nikolovska, Jan Pohl, Bernhard Hommel, Arvid Kappas, Francesco Maurelli",
       "year": "2024",
       "venue": "",
       "source": "openalex",
@@ -547,7 +552,7 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "researcherId": "francesco-maurelli",
       "researcherName": "Francesco Maurelli",
       "title": "User Perception of Robot Behavior as a Function of Previous Experience with Robots *",
-      "authors": "Кristina Nikolovska, Jan Pohl, Bernhard Hommel, Arvid Kappas, Francesco Maurelli",
+      "authors": "Kristina Nikolovska, Jan Pohl, Bernhard Hommel, Arvid Kappas, Francesco Maurelli",
       "year": "2024",
       "venue": "",
       "source": "openalex",
@@ -587,7 +592,7 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "researcherId": "francesco-maurelli",
       "researcherName": "Francesco Maurelli",
       "title": "Attribution of Selfhood Based on Simple Behavioral Cues: Towards a Pars Pro Toto Account",
-      "authors": "Jan Pohl, Кristina Nikolovska, Dennis Küster, Francesco Maurelli, Arvid Kappas, Bernhard Hommel",
+      "authors": "Jan Pohl, Kristina Nikolovska, Dennis Küster, Francesco Maurelli, Arvid Kappas, Bernhard Hommel",
       "year": "2024",
       "venue": "SSRN Electronic Journal",
       "source": "openalex",
@@ -972,7 +977,7 @@ window.RIS_GENERATED_PUBLICATIONS = {
     {
       "researcherId": "francesco-maurelli",
       "researcherName": "Francesco Maurelli",
-      "title": "Evaluation of computer networking methods for interaction with remote\\n robotic systems",
+      "title": "Evaluation of computer networking methods for interaction with remote robotic systems",
       "authors": "Peter-Newman Messan, Szymon Krupiński, Guillem Vallicrosa, Pere Ridao, Francesco Maurelli",
       "year": "2021",
       "venue": "arXiv (Cornell University)",
@@ -1102,25 +1107,6 @@ window.RIS_GENERATED_PUBLICATIONS = {
     {
       "researcherId": "francesco-maurelli",
       "researcherName": "Francesco Maurelli",
-      "title": "Evaluation of computer networking methods for interaction with remote robotic systems",
-      "authors": "Peter-Newman Messan, Szymon Krupiński, Francesco Maurelli, Guillem Vallicrosa, Pere Ridao",
-      "year": "2021",
-      "venue": "",
-      "source": "openalex",
-      "sourceUrl": "https://doi.org/10.1109/africon51333.2021.9570912",
-      "doiUrl": "https://doi.org/10.1109/africon51333.2021.9570912",
-      "publicationDate": "2021-09-13",
-      "researcherIds": [
-        "francesco-maurelli"
-      ],
-      "researcherNames": [
-        "Francesco Maurelli"
-      ],
-      "tags": []
-    },
-    {
-      "researcherId": "francesco-maurelli",
-      "researcherName": "Francesco Maurelli",
       "title": "Design and Fabrication of a Low-Cost 6 DoF Underwater Vehicle",
       "authors": "Hamza Muzammal, Syed Atif Mehdi, Musharraf Ahmed Hanif, Francesco Maurelli",
       "year": "2021",
@@ -1244,28 +1230,6 @@ window.RIS_GENERATED_PUBLICATIONS = {
       ]
     },
     {
-      "researcherId": "jakob-suchan",
-      "researcherName": "Jakob Suchan",
-      "title": "Commonsense Visual Sensemaking for Autonomous Driving: On Generalised\\n Neurosymbolic Online Abduction Integrating Vision and Semantics",
-      "authors": "Jakob Suchan, Mehul Bhatt, Srikrishna Varadarajan",
-      "year": "2020",
-      "venue": "arXiv (Cornell University)",
-      "source": "openalex",
-      "sourceUrl": "http://arxiv.org/abs/2012.14359",
-      "doiUrl": "https://doi.org/10.48550/arxiv.2012.14359",
-      "publicationDate": "2020-12-28",
-      "researcherIds": [
-        "jakob-suchan"
-      ],
-      "researcherNames": [
-        "Jakob Suchan"
-      ],
-      "tags": [
-        "autonomy",
-        "perception"
-      ]
-    },
-    {
       "researcherId": "francesco-maurelli",
       "researcherName": "Francesco Maurelli",
       "title": "Blue Duck II: A low-cost AUV design based on a moving mass for shallow-water operations",
@@ -1372,32 +1336,11 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "title": "Out of Sight But Not Out of Mind: An Answer Set Programming Based Online Abduction Framework for Visual Sensemaking in Autonomous Driving",
       "authors": "Jakob Suchan, Mehul Bhatt, Srikrishna Varadarajan",
       "year": "2019",
-      "venue": "",
+      "venue": "arXiv (Cornell University)",
       "source": "openalex",
       "sourceUrl": "https://doi.org/10.24963/ijcai.2019/260",
       "doiUrl": "https://doi.org/10.24963/ijcai.2019/260",
       "publicationDate": "2019-07-28",
-      "researcherIds": [
-        "jakob-suchan"
-      ],
-      "researcherNames": [
-        "Jakob Suchan"
-      ],
-      "tags": [
-        "autonomy"
-      ]
-    },
-    {
-      "researcherId": "jakob-suchan",
-      "researcherName": "Jakob Suchan",
-      "title": "Out of Sight But Not Out of Mind: An Answer Set Programming Based Online\\n Abduction Framework for Visual Sensemaking in Autonomous Driving",
-      "authors": "Jakob Suchan, Mehul Bhatt, Srikrishna Varadarajan",
-      "year": "2019",
-      "venue": "arXiv (Cornell University)",
-      "source": "openalex",
-      "sourceUrl": "http://arxiv.org/abs/1906.00107",
-      "doiUrl": "https://doi.org/10.48550/arxiv.1906.00107",
-      "publicationDate": "2019-05-31",
       "researcherIds": [
         "jakob-suchan"
       ],
@@ -1476,25 +1419,6 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "sourceUrl": "https://doi.org/10.1007/978-3-319-99906-7_24",
       "doiUrl": "https://doi.org/10.1007/978-3-319-99906-7_24",
       "publicationDate": "2018-01-01",
-      "researcherIds": [
-        "jakob-suchan"
-      ],
-      "researcherNames": [
-        "Jakob Suchan"
-      ],
-      "tags": []
-    },
-    {
-      "researcherId": "jakob-suchan",
-      "researcherName": "Jakob Suchan",
-      "title": "Visual Explanation by High-Level Abduction: On Answer-Set Programming\\n Driven Reasoning about Moving Objects",
-      "authors": "Jakob Suchan, Mehul Bhatt, Przemysław Andrzej Wałęga, Carl Schultz",
-      "year": "2017",
-      "venue": "arXiv (Cornell University)",
-      "source": "openalex",
-      "sourceUrl": "http://arxiv.org/abs/1712.00840",
-      "doiUrl": "https://doi.org/10.48550/arxiv.1712.00840",
-      "publicationDate": "2017-12-03",
       "researcherIds": [
         "jakob-suchan"
       ],

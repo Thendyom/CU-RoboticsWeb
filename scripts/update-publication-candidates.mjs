@@ -12,6 +12,11 @@ const enabledAuthors = (config.authors || []).filter((author) => author.enabled 
 const provider = process.env.PUBLICATION_PROVIDER || config.provider || 'semantic-scholar';
 const maxPapers = Number(config.maxPapersPerAuthor || 20);
 const generatedAt = new Date().toISOString();
+const existingPublications = await readExistingPublications();
+const confusableCharacterMap = new Map([
+  ['К', 'K'],
+  ['к', 'k']
+]);
 
 if (dryRun) {
   console.log(JSON.stringify({
@@ -34,11 +39,18 @@ const output = {
   notes: [
     'Publications are generated from free scholarly APIs and mirrored into assets/js/generated-publications.js for the visible site.',
     'Papers are deduplicated by DOI and normalized title before publishing.',
+    'Existing generated publications are preserved, and newly discovered publications are prepended on each update.',
     'Use stable author IDs when possible. Name-only searches can match the wrong researcher.'
   ],
   authors: [],
+  previousCandidateCount: existingPublications.length,
+  preservedPublicationCount: 0,
+  newPublicationCount: 0,
+  knownPublicationCount: 0,
   duplicateCount: 0,
   duplicates: [],
+  warningCount: 0,
+  warnings: [],
   candidates: []
 };
 const collectedCandidates = [];
@@ -62,9 +74,14 @@ for (const author of enabledAuthors) {
   }
 }
 
-const deduped = deduplicatePublications(collectedCandidates);
+const deduped = mergeGeneratedPublications(collectedCandidates, existingPublications);
+output.preservedPublicationCount = deduped.preservedPublicationCount;
+output.newPublicationCount = deduped.newPublicationCount;
+output.knownPublicationCount = deduped.knownPublicationCount;
 output.duplicateCount = deduped.duplicates.length;
 output.duplicates = deduped.duplicates;
+output.warningCount = deduped.warnings.length;
+output.warnings = deduped.warnings;
 output.candidates = deduped.publications;
 
 const siteOutput = {
@@ -72,12 +89,197 @@ const siteOutput = {
   status: output.status,
   provider,
   authors: output.authors,
+  previousCandidateCount: output.previousCandidateCount,
+  preservedPublicationCount: output.preservedPublicationCount,
+  newPublicationCount: output.newPublicationCount,
+  knownPublicationCount: output.knownPublicationCount,
+  warningCount: output.warningCount,
   publications: output.candidates
 };
 
 await writeFile(candidatesOutputUrl, `${JSON.stringify(output, null, 2)}\n`);
 await writeFile(siteOutputUrl, `window.RIS_GENERATED_PUBLICATIONS = ${JSON.stringify(siteOutput, null, 2)};\n`);
 console.log(`Wrote ${output.candidates.length} deduplicated publications to ${siteOutputUrl.pathname}`);
+console.log(`Preserved ${output.preservedPublicationCount}, added ${output.newPublicationCount}, matched ${output.knownPublicationCount} already-known publications.`);
+
+async function readExistingPublications() {
+  try {
+    const currentOutput = JSON.parse(await readFile(candidatesOutputUrl, 'utf8'));
+    if (Array.isArray(currentOutput.candidates)) {
+      return currentOutput.candidates;
+    }
+  } catch {
+    // Fall back to the browser-ready mirror when the metadata file does not exist yet.
+  }
+
+  try {
+    const siteOutput = await readFile(siteOutputUrl, 'utf8');
+    const parsed = parseGeneratedPublicationMirror(siteOutput);
+    return Array.isArray(parsed?.publications) ? parsed.publications : [];
+  } catch {
+    return [];
+  }
+}
+
+function parseGeneratedPublicationMirror(source) {
+  const match = source.match(/window\.RIS_GENERATED_PUBLICATIONS\s*=\s*(\{[\s\S]*\});?\s*$/);
+  if (!match) return null;
+  return JSON.parse(match[1]);
+}
+
+function mergeGeneratedPublications(freshPapers, storedPublications) {
+  const existing = deduplicateStoredPublications(storedPublications);
+  const fresh = deduplicateFreshPublications(freshPapers);
+  const index = createPublicationIndex(existing.publications);
+  const newPublications = [];
+  const knownMatches = [];
+
+  for (const publication of fresh.publications) {
+    const keys = getPublicationKeys(publication);
+    const knownPublication = keys.map((key) => index.get(key)).find(Boolean);
+
+    if (knownPublication) {
+      mergePublication(knownPublication, publication);
+      knownMatches.push({
+        title: publication.title,
+        researcherName: publication.researcherName,
+        duplicateOf: knownPublication.title,
+        reason: 'already-preserved'
+      });
+      keys.forEach((key) => index.set(key, knownPublication));
+      continue;
+    }
+
+    newPublications.push(publication);
+    keys.forEach((key) => index.set(key, publication));
+  }
+
+  const publications = [
+    ...newPublications.sort(comparePublications),
+    ...existing.publications
+  ];
+
+  return {
+    publications,
+    preservedPublicationCount: existing.publications.length,
+    newPublicationCount: newPublications.length,
+    knownPublicationCount: knownMatches.length,
+    duplicates: [
+      ...existing.duplicates,
+      ...fresh.duplicates
+    ],
+    warnings: [
+      ...validatePublicationTitles(publications),
+      ...validatePublicationNames(publications)
+    ]
+  };
+}
+
+function deduplicateStoredPublications(storedPublications) {
+  const index = new Map();
+  const publications = [];
+  const duplicates = [];
+
+  for (const storedPublication of storedPublications) {
+    const publication = normalizeStoredPublication(storedPublication);
+    if (!publication?.title || !publication.year) continue;
+
+    const keys = getPublicationKeys(publication);
+    const existing = keys.map((key) => index.get(key)).find(Boolean);
+
+    if (existing) {
+      mergePublication(existing, publication);
+      duplicates.push({
+        title: publication.title,
+        researcherName: publication.researcherName,
+        duplicateOf: existing.title,
+        reason: 'duplicate-existing-publication'
+      });
+      keys.forEach((key) => index.set(key, existing));
+      continue;
+    }
+
+    publications.push(publication);
+    keys.forEach((key) => index.set(key, publication));
+  }
+
+  return { publications, duplicates };
+}
+
+function deduplicateFreshPublications(freshPapers) {
+  const index = new Map();
+  const publications = [];
+  const duplicates = [];
+
+  for (const paper of freshPapers) {
+    const publication = createPublication(paper);
+    const keys = getPublicationKeys(publication);
+    const existing = keys.map((key) => index.get(key)).find(Boolean);
+
+    if (existing) {
+      mergePublication(existing, publication);
+      duplicates.push({
+        title: publication.title,
+        researcherName: publication.researcherName,
+        duplicateOf: existing.title,
+        reason: 'duplicate-fresh-publication'
+      });
+      keys.forEach((key) => index.set(key, existing));
+      continue;
+    }
+
+    publications.push(publication);
+    keys.forEach((key) => index.set(key, publication));
+  }
+
+  return {
+    publications: publications.sort(comparePublications),
+    duplicates
+  };
+}
+
+function createPublicationIndex(publications) {
+  const index = new Map();
+
+  for (const publication of publications) {
+    getPublicationKeys(publication).forEach((key) => index.set(key, publication));
+  }
+
+  return index;
+}
+
+function createPublication(paper) {
+  return {
+    ...paper,
+    title: cleanTitle(paper.title),
+    authors: cleanTextField(paper.authors),
+    venue: cleanTextField(paper.venue),
+    researcherIds: uniqueValues([
+      ...(Array.isArray(paper.researcherIds) ? paper.researcherIds : []),
+      paper.researcherId
+    ]),
+    researcherNames: uniqueValues([
+      ...(Array.isArray(paper.researcherNames) ? paper.researcherNames : []),
+      paper.researcherName
+    ]),
+    tags: uniqueValues([
+      ...(Array.isArray(paper.tags) ? paper.tags : []),
+      ...inferPublicationTags(paper)
+    ])
+  };
+}
+
+function normalizeStoredPublication(publication) {
+  if (!publication || typeof publication !== 'object') return null;
+
+  return createPublication({
+    ...publication,
+    year: String(publication.year || ''),
+    publicationDate: publication.publicationDate || '',
+    researcherId: publication.researcherId || publication.researcherIds?.[0] || '',
+    researcherName: publication.researcherName || publication.researcherNames?.[0] || ''
+  });
+}
 
 async function getSemanticScholarAuthorPapers(author, limit) {
   const fields = [
@@ -239,43 +441,6 @@ function hasOpenAlexAffiliationHint(author, affiliationHint) {
   });
 }
 
-function deduplicatePublications(papers) {
-  const index = new Map();
-  const publications = [];
-  const duplicates = [];
-
-  for (const paper of papers) {
-    const keys = getPublicationKeys(paper);
-    const existing = keys.map((key) => index.get(key)).find(Boolean);
-
-    if (existing) {
-      mergePublication(existing, paper);
-      duplicates.push({
-        title: paper.title,
-        researcherName: paper.researcherName,
-        duplicateOf: existing.title
-      });
-      keys.forEach((key) => index.set(key, existing));
-      continue;
-    }
-
-    const publication = {
-      ...paper,
-      researcherIds: uniqueValues([paper.researcherId]),
-      researcherNames: uniqueValues([paper.researcherName]),
-      tags: inferPublicationTags(paper)
-    };
-
-    publications.push(publication);
-    keys.forEach((key) => index.set(key, publication));
-  }
-
-  return {
-    publications: publications.sort(comparePublications),
-    duplicates
-  };
-}
-
 function getPublicationKeys(paper) {
   const doi = normalizeDoi(paper.doiUrl);
   const title = normalizeTitle(paper.title);
@@ -296,15 +461,18 @@ function mergePublication(existing, incoming) {
   existing.researcherIds = uniqueValues([
     ...(existing.researcherIds || []),
     existing.researcherId,
+    ...(incoming.researcherIds || []),
     incoming.researcherId
   ]);
   existing.researcherNames = uniqueValues([
     ...(existing.researcherNames || []),
     existing.researcherName,
+    ...(incoming.researcherNames || []),
     incoming.researcherName
   ]);
   existing.tags = uniqueValues([
     ...(existing.tags || []),
+    ...(incoming.tags || []),
     ...inferPublicationTags(incoming)
   ]);
 }
@@ -334,10 +502,116 @@ function inferPublicationTags(paper) {
 }
 
 function cleanTitle(value = '') {
-  return String(value)
+  return normalizeConfusableCharacters(value)
+    .replace(/\\[nrt]/g, ' ')
     .replace(/<[^>]+>/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
+}
+
+function cleanTextField(value = '') {
+  return normalizeConfusableCharacters(value)
+    .replace(/\\[nrt]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function normalizeConfusableCharacters(value = '') {
+  return [...String(value)]
+    .map((character) => confusableCharacterMap.get(character) || character)
+    .join('');
+}
+
+function validatePublicationTitles(publications) {
+  const warnings = [];
+  const seenTitles = new Map();
+
+  publications.forEach((publication, index) => {
+    const title = publication.title || '';
+    const normalizedTitle = normalizeTitle(title);
+
+    if (!normalizedTitle) {
+      warnings.push(createPublicationWarning('missing-title', publication, index));
+      return;
+    }
+
+    if (seenTitles.has(normalizedTitle)) {
+      warnings.push(createPublicationWarning('duplicate-title', publication, index, {
+        duplicateOf: seenTitles.get(normalizedTitle).title
+      }));
+    } else {
+      seenTitles.set(normalizedTitle, publication);
+    }
+
+    if (title.length < 8) {
+      warnings.push(createPublicationWarning('very-short-title', publication, index));
+    }
+
+    if (/<[^>]+>|&lt;|&gt;/.test(title)) {
+      warnings.push(createPublicationWarning('html-in-title', publication, index));
+    }
+
+    if (/\s{2,}|\n|\t|\\[nrt]/.test(title)) {
+      warnings.push(createPublicationWarning('spacing-in-title', publication, index));
+    }
+
+    if (/^(untitled|unknown|null|undefined|n\/a)$/i.test(title)) {
+      warnings.push(createPublicationWarning('placeholder-title', publication, index));
+    }
+
+    if (/[\u0400-\u04ff]/.test(title)) {
+      warnings.push(createPublicationWarning('cyrillic-in-title', publication, index));
+    }
+  });
+
+  return warnings;
+}
+
+function validatePublicationNames(publications) {
+  const warnings = [];
+
+  publications.forEach((publication, index) => {
+    const researcherNames = Array.isArray(publication.researcherNames)
+      ? publication.researcherNames
+      : [publication.researcherName].filter(Boolean);
+
+    if (!researcherNames.length) {
+      warnings.push(createPublicationWarning('missing-researcher-name', publication, index));
+    }
+
+    researcherNames.forEach((name) => {
+      if (!isSoundPersonName(name)) {
+        warnings.push(createPublicationWarning('suspicious-researcher-name', publication, index, { name }));
+      }
+    });
+
+    if (!publication.authors || /^(unknown|null|undefined|n\/a)$/i.test(publication.authors)) {
+      warnings.push(createPublicationWarning('missing-author-list', publication, index));
+    }
+
+    if (/[\u0400-\u04ff]/.test(publication.authors || '')) {
+      warnings.push(createPublicationWarning('cyrillic-in-author-list', publication, index));
+    }
+  });
+
+  return warnings;
+}
+
+function createPublicationWarning(type, publication, index, extra = {}) {
+  return {
+    type,
+    index,
+    title: publication.title || '',
+    researcherName: publication.researcherName || '',
+    ...extra
+  };
+}
+
+function isSoundPersonName(value = '') {
+  const name = cleanTextField(value);
+  return name.length >= 3
+    && !/[0-9<>]/.test(name)
+    && !/^(unknown|null|undefined|n\/a)$/i.test(name);
 }
 
 function normalizeDoi(value = '') {
