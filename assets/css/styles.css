@@ -825,6 +825,95 @@ ul{margin-top:.4rem}
   font-size:.9rem;
 }
 
+.runtime-panel{
+  position:fixed;
+  z-index:80;
+  right:24px;
+  bottom:24px;
+  width:min(360px,calc(100vw - 36px));
+  padding:17px 18px 16px;
+  border:1px solid rgba(255,255,255,.18);
+  border-left:5px solid var(--constructor-yellow);
+  border-radius:6px;
+  background:var(--constructor-navy-deep);
+  color:#fff;
+  box-shadow:0 18px 48px rgba(0,0,0,.24);
+  opacity:0;
+  transform:translateY(14px);
+  animation:runtime-panel-in .22s ease-out forwards;
+}
+.runtime-panel::before{
+  content:"";
+  position:absolute;
+  inset:-12px;
+  border:1px solid rgba(0,178,255,.38);
+  border-radius:10px;
+  pointer-events:none;
+  animation:runtime-scan 1.45s ease-out;
+}
+.runtime-panel strong{
+  display:block;
+  margin:0 0 10px;
+  color:var(--constructor-yellow);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:1.12rem;
+  line-height:1.1;
+}
+.runtime-panel p{
+  margin:0 0 6px;
+  color:#E7EDF4;
+  font-size:.94rem;
+  line-height:1.45;
+}
+.runtime-panel p:last-child{margin-bottom:0}
+.runtime-panel-close{
+  appearance:none;
+  margin-top:12px;
+  min-height:36px;
+  border:1px solid rgba(255,255,255,.28);
+  border-radius:6px;
+  background:transparent;
+  color:#fff;
+  padding:7px 11px;
+  font:inherit;
+  font-size:.86rem;
+  font-weight:780;
+  cursor:pointer;
+}
+.runtime-panel-close:hover,
+.runtime-panel-close:focus-visible{
+  background:rgba(255,255,255,.1);
+  outline:none;
+}
+.runtime-panel.is-closing{
+  animation:runtime-panel-out .18s ease-in forwards;
+}
+
+@keyframes runtime-panel-in{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes runtime-panel-out{
+  to{
+    opacity:0;
+    transform:translateY(10px);
+  }
+}
+
+@keyframes runtime-scan{
+  from{
+    opacity:.9;
+    transform:scale(.96);
+  }
+  to{
+    opacity:0;
+    transform:scale(1.08);
+  }
+}
+
 @media (max-width:920px){
   :root{--page-gutter:22px}
   .header-inner{min-height:66px}
@@ -962,5 +1051,22 @@ ul{margin-top:.4rem}
   .destination-entry{gap:12px}
   .brand-mark{width:38px;height:38px}
   .brand-text{font-size:.92rem;max-width:178px}
+  .runtime-panel{
+    right:14px;
+    bottom:14px;
+    width:calc(100vw - 28px);
+  }
   .footer-inner{padding:24px var(--page-gutter)}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .runtime-panel,
+  .runtime-panel::before,
+  .runtime-panel.is-closing{
+    animation:none;
+  }
+  .runtime-panel{
+    opacity:1;
+    transform:none;
+  }
 }
