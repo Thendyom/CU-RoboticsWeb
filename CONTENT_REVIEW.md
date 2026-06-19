@@ -48,7 +48,7 @@ Last full review pass: 2026-06-17
 - Do not list people, projects, or deadlines unless the source is current and public.
 - Prefer the current program page and handbook for formal curriculum wording when older handbook copies differ in module names.
 - Keep generated publications source-backed and deduplicated by DOI or normalized title.
-- Treat publication co-authors and tracked candidate authors separately; the current tracked author list contains only Francesco Maurelli.
+- Treat publication co-authors and tracked candidate authors separately; the current tracked author list contains Francesco Maurelli and Jakob Suchan.
 - Do not add person or research photos in this pass.
 - Use the reviewed data file for maintainable people and group entries, and as a publication fallback.
 - Spot-check monthly publication API results after adding or changing tracked authors.

@@ -60,28 +60,5 @@
 </footer>
 <script src="assets/js/reviewed-data.js"></script>
 <script src="assets/js/main.js"></script>
-<script>
-  (function () {
-    var el = document.getElementById('group-cards');
-    var groups = window.RIS_REVIEWED_DATA && window.RIS_REVIEWED_DATA.groups;
-    if (!Array.isArray(groups) || groups.length === 0) {
-      el.innerHTML = '<p>No research groups listed yet.</p>';
-      return;
-    }
-    el.innerHTML = groups.map(function (group) {
-      return (
-        '<article class="card project-card">' +
-          '<p class="eyebrow">Research group</p>' +
-          '<h2>' + group.name + '</h2>' +
-          '<p>' + group.summary + '</p>' +
-          '<p class="links">' +
-            '<a href="groups/' + group.slug + '.html">Group page</a>' +
-            '<a href="' + group.officialUrl + '" target="_blank" rel="noopener">Official page</a>' +
-          '</p>' +
-        '</article>'
-      );
-    }).join('');
-  })();
-</script>
 </body>
 </html>

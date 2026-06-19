@@ -54,6 +54,23 @@
       <button class="filter-button" type="button" data-filter="perception" aria-pressed="false">Perception</button>
     </div>
 
+    <div class="publication-tools" aria-label="Publication search and sorting">
+      <label for="publication-search">Search</label>
+      <div class="publication-search-field">
+        <input class="publication-search" id="publication-search" type="search" autocomplete="off" aria-autocomplete="list" aria-controls="publication-suggestions" aria-expanded="false" placeholder="Title, author, venue, year">
+        <button class="publication-clear" id="publication-clear" type="button" hidden>Clear</button>
+        <div class="publication-suggestions" id="publication-suggestions" role="listbox" hidden></div>
+      </div>
+      <label for="publication-sort">Sort</label>
+      <select class="publication-sort" id="publication-sort">
+        <option value="relevance">Best match</option>
+        <option value="newest">Newest first</option>
+        <option value="oldest">Oldest first</option>
+        <option value="title">Title A-Z</option>
+        <option value="author">Author A-Z</option>
+      </select>
+    </div>
+
     <p class="pub-summary" id="publication-summary" aria-live="polite"></p>
 
     <div class="pubs" id="publication-list" aria-live="polite">
