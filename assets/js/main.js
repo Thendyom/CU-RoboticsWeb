@@ -678,7 +678,11 @@ function initializeRuntimeState() {
     }
   });
 
-  marker?.addEventListener('click', () => {
+  marker?.addEventListener('click', (event) => {
+    if (!event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) {
+      event.preventDefault();
+    }
+
     markerTouches += 1;
     window.clearTimeout(resetTimer);
     resetTimer = window.setTimeout(() => {
