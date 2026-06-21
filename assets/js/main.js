@@ -701,3 +701,91 @@ function decodeRuntimeToken(values, key) {
     .map((value, index) => String.fromCharCode(value ^ (key + (index % 11))))
     .join('');
 }
+
+function initializeRuntimeState() {
+  const marker = document.querySelector('.brand-mark');
+  const key = 37;
+  const routeToken = [6, 82, 78, 69];
+  let markerTouches = 0;
+  let resetTimer = 0;
+
+  const matchesRouteToken = () => {
+    return window.location.hash.toLowerCase() === decodeRuntimeToken(routeToken, key);
+  };
+
+  const revealPanel = () => {
+    if (document.querySelector('.runtime-panel')) return;
+
+    const lines = [
+      [119, 111, 116, 8, 97, 95, 73, 12, 79, 91, 70, 73, 66, 7, 68, 70, 77],
+      [104, 71, 78, 70, 93, 75, 66, 66, 72, 92, 21, 5, 114, 78, 69, 9, 104, 78, 66, 94, 75],
+      [118, 79, 64, 70, 72, 70, 17, 12, 76, 92, 76, 77, 79, 81, 77, 77, 10, 66, 66, 13, 94, 67, 68, 79, 73, 8, 90, 67, 76, 68, 89],
+      [102, 73, 73, 91, 93, 88, 94, 79, 89, 65, 93, 5, 115, 73, 65, 95, 79, 89, 95, 68, 90, 86, 5, 116, 110, 123]
+    ].map((values) => decodeRuntimeToken(values, key));
+
+    const panel = document.createElement('aside');
+    panel.className = 'runtime-panel';
+    panel.setAttribute('role', 'dialog');
+    panel.setAttribute('aria-label', lines[0]);
+
+    const title = document.createElement('strong');
+    title.textContent = lines[0];
+
+    const detail = document.createElement('div');
+    lines.slice(1).forEach((line) => {
+      const row = document.createElement('p');
+      row.textContent = line;
+      detail.append(row);
+    });
+
+    const close = document.createElement('button');
+    close.className = 'runtime-panel-close';
+    close.type = 'button';
+    close.textContent = 'Close';
+
+    const dismiss = () => {
+      panel.classList.add('is-closing');
+      window.setTimeout(() => {
+        panel.remove();
+      }, 180);
+    };
+
+    close.addEventListener('click', dismiss);
+    panel.append(title, detail, close);
+    document.body.append(panel);
+    window.setTimeout(dismiss, 12000);
+  };
+
+  if (matchesRouteToken()) {
+    revealPanel();
+  }
+
+  window.addEventListener('hashchange', () => {
+    if (matchesRouteToken()) {
+      revealPanel();
+    }
+  });
+
+  marker?.addEventListener('click', (event) => {
+    if (!event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) {
+      event.preventDefault();
+    }
+
+    markerTouches += 1;
+    window.clearTimeout(resetTimer);
+    resetTimer = window.setTimeout(() => {
+      markerTouches = 0;
+    }, 1800);
+
+    if (markerTouches >= 7) {
+      markerTouches = 0;
+      revealPanel();
+    }
+  });
+}
+
+function decodeRuntimeToken(values, key) {
+  return values
+    .map((value, index) => String.fromCharCode(value ^ (key + (index % 11))))
+    .join('');
+}
