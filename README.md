@@ -43,7 +43,7 @@ The site can refresh publication data once a month through GitHub Actions.
 
 The workflow now publishes the generated publication list directly to the visible site through `assets/js/generated-publications.js`. The older reviewed publication entries in `assets/js/reviewed-data.js` remain as a fallback when the generated file is empty or has not run yet.
 
-The tracked author list for the updater lives in `assets/data/publication-authors.json`. It currently contains one enabled author: Francesco Maurelli. Add more professors as additional enabled authors. Use stable Semantic Scholar or OpenAlex author IDs where possible; name-only searches can match the wrong researcher.
+The tracked author list for the updater lives in `assets/data/publication-authors.json`. It currently contains two enabled authors: Francesco Maurelli and Jakob Suchan. Add more professors as additional enabled authors. Use stable Semantic Scholar or OpenAlex author IDs where possible; name-only searches can match the wrong researcher.
 
 Generated papers are deduplicated before display. The updater first matches DOI values when available, then normalized paper titles, so co-authored papers from multiple tracked professors should appear once.
 

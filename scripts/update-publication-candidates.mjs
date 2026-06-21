@@ -170,7 +170,8 @@ function mergeGeneratedPublications(freshPapers, storedPublications) {
     ],
     warnings: [
       ...validatePublicationTitles(publications),
-      ...validatePublicationNames(publications)
+      ...validatePublicationNames(publications),
+      ...validatePublicationMetadata(publications)
     ]
   };
 }
@@ -591,6 +592,24 @@ function validatePublicationNames(publications) {
 
     if (/[\u0400-\u04ff]/.test(publication.authors || '')) {
       warnings.push(createPublicationWarning('cyrillic-in-author-list', publication, index));
+    }
+  });
+
+  return warnings;
+}
+
+function validatePublicationMetadata(publications) {
+  const warnings = [];
+
+  publications.forEach((publication, index) => {
+    const tags = Array.isArray(publication.tags) ? publication.tags.filter(Boolean) : [];
+
+    if (!tags.length) {
+      warnings.push(createPublicationWarning('missing-tags', publication, index));
+    }
+
+    if (!cleanTextField(publication.venue)) {
+      warnings.push(createPublicationWarning('missing-venue', publication, index));
     }
   });
 
