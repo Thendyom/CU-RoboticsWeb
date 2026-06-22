@@ -12,6 +12,7 @@ The site is a small academic hub for RIS: program context, people, research area
 - `publications.html` - selected publications from tracked RIS faculty publication sources.
 - `news.html` - student-facing starting points, research preparation, and a bachelor's thesis framework.
 - `graduate-paths.html` - alumni next steps and, when available, destinations grouped by class year.
+- `feedback.html` - feedback route for site corrections, broken links, and content suggestions.
 - `groups.html` - supporting reviewed-data group overview.
 - `groups/marine-systems-and-robotics.html` - Marine Systems and Robotics group page.
 - `groups/dummi-1.html` and `groups/dummi-2.html` - placeholder group pages for testing the Research hub structure.

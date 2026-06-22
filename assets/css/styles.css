@@ -917,6 +917,35 @@ ul{margin-top:.4rem}
   color:#475467;
 }
 
+.feedback-layout{
+  display:grid;
+  grid-template-columns:minmax(0,1.12fr) minmax(280px,.88fr);
+  gap:18px;
+  align-items:stretch;
+}
+.feedback-panel{
+  border:1px solid var(--line);
+  border-left:5px solid var(--constructor-red);
+  border-radius:6px;
+  padding:28px;
+  background:#fff;
+  box-shadow:var(--shadow);
+}
+.feedback-panel p:not(.eyebrow),
+.feedback-side li{
+  color:#3E4853;
+}
+.feedback-primary .cta-row{
+  margin-top:22px;
+}
+.feedback-side h2{
+  margin-bottom:14px;
+  font-size:1.55rem;
+}
+.feedback-links{
+  align-content:start;
+}
+
 .site-footer{
   margin-top:44px;
   border-top:4px solid var(--constructor-sky);
@@ -927,6 +956,20 @@ ul{margin-top:.4rem}
 .site-footer p{margin:0}
 .site-footer a{color:#fff}
 .site-footer small{color:#C8D2DC}
+.site-footer .footer-feedback-link{
+  display:inline-flex;
+  margin-left:3px;
+  padding:2px 8px;
+  border:1px solid rgba(255,198,34,.62);
+  border-radius:6px;
+  color:#111827;
+  background:var(--constructor-yellow);
+  font-weight:800;
+}
+.site-footer .footer-feedback-link:hover{
+  background:#FFCC38;
+  text-decoration:none;
+}
 .site-footer .site-disclaimer{
   margin-top:8px;
   color:#C8D2DC;
@@ -1056,7 +1099,8 @@ ul{margin-top:.4rem}
   .path-outlook,
   .destination-year,
   .thesis-check,
-  .thesis-download{
+  .thesis-download,
+  .feedback-layout{
     grid-template-columns:1fr;
   }
   .publication-tools{
