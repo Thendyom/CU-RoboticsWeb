@@ -1,5 +1,5 @@
 window.RIS_GENERATED_PUBLICATIONS = {
-  "generatedAt": "2026-06-17T08:25:09.122Z",
+  "generatedAt": "2026-07-01T10:16:58.998Z",
   "status": "ok",
   "provider": "openalex",
   "authors": [
@@ -8,22 +8,60 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "name": "Francesco Maurelli",
       "status": "ok",
       "openAlexAuthorId": "https://openalex.org/A5023480949",
-      "paperCount": 93
+      "paperCount": 94
     },
     {
       "id": "jakob-suchan",
       "name": "Jakob Suchan",
       "status": "ok",
       "openAlexAuthorId": "https://openalex.org/A5069718093",
-      "paperCount": 56
+      "paperCount": 58
     }
   ],
-  "previousCandidateCount": 90,
+  "previousCandidateCount": 86,
   "preservedPublicationCount": 86,
-  "newPublicationCount": 0,
-  "knownPublicationCount": 86,
-  "warningCount": 0,
+  "newPublicationCount": 2,
+  "knownPublicationCount": 84,
+  "warningCount": 67,
   "publications": [
+    {
+      "researcherId": "francesco-maurelli",
+      "researcherName": "Francesco Maurelli",
+      "title": "Enhanced quality assessment of Cymbopogon citratus essential oil by integrating Raman spectroscopy with machine learning methods",
+      "authors": "Aswathy Jayasekher, Francesco Maurelli, Devendra Prajapati, Ajoy K. Palit, PC Panchariya",
+      "year": "2026",
+      "venue": "Applied Food Research",
+      "source": "openalex",
+      "sourceUrl": "https://doi.org/10.1016/j.afres.2026.102337",
+      "doiUrl": "https://doi.org/10.1016/j.afres.2026.102337",
+      "publicationDate": "2026-06-26",
+      "researcherIds": [
+        "francesco-maurelli"
+      ],
+      "researcherNames": [
+        "Francesco Maurelli"
+      ],
+      "tags": []
+    },
+    {
+      "researcherId": "jakob-suchan",
+      "researcherName": "Jakob Suchan",
+      "title": "Reasonable Motion: A General ASP Foundation for Environment Constrained Movement Trajectory Computation",
+      "authors": "Julius Monsen, Jakob Suchan, Mehul Bhatt, Lars Karlsson",
+      "year": "2026",
+      "venue": "ArXiv.org",
+      "source": "openalex",
+      "sourceUrl": "https://arxiv.org/abs/2606.25626",
+      "doiUrl": "https://doi.org/10.48550/arxiv.2606.25626",
+      "publicationDate": "2026-06-24",
+      "researcherIds": [
+        "jakob-suchan"
+      ],
+      "researcherNames": [
+        "Jakob Suchan"
+      ],
+      "tags": []
+    },
     {
       "researcherId": "francesco-maurelli",
       "researcherName": "Francesco Maurelli",
