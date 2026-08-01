@@ -1,5 +1,5 @@
 window.RIS_GENERATED_PUBLICATIONS = {
-  "generatedAt": "2026-07-01T10:16:58.998Z",
+  "generatedAt": "2026-08-01T08:35:14.958Z",
   "status": "ok",
   "provider": "openalex",
   "authors": [
@@ -15,15 +15,53 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "name": "Jakob Suchan",
       "status": "ok",
       "openAlexAuthorId": "https://openalex.org/A5069718093",
-      "paperCount": 58
+      "paperCount": 62
     }
   ],
-  "previousCandidateCount": 86,
-  "preservedPublicationCount": 86,
+  "previousCandidateCount": 88,
+  "preservedPublicationCount": 88,
   "newPublicationCount": 2,
-  "knownPublicationCount": 84,
-  "warningCount": 67,
+  "knownPublicationCount": 82,
+  "warningCount": 68,
   "publications": [
+    {
+      "researcherId": "jakob-suchan",
+      "researcherName": "Jakob Suchan",
+      "title": "Answer Set Programming Energised! End-to-End Neurosymbolic Reasoning and Learning with ASP and Energy Based Models",
+      "authors": "Jakob Suchan, Julius Monsen, Salim Baloch, Mehul Bhatt",
+      "year": "2026",
+      "venue": "arXiv (Cornell University)",
+      "source": "openalex",
+      "sourceUrl": "https://doi.org/10.48550/arxiv.2607.08136",
+      "doiUrl": "https://doi.org/10.48550/arxiv.2607.08136",
+      "publicationDate": "2026-07-09",
+      "researcherIds": [
+        "jakob-suchan"
+      ],
+      "researcherNames": [
+        "Jakob Suchan"
+      ],
+      "tags": []
+    },
+    {
+      "researcherId": "jakob-suchan",
+      "researcherName": "Jakob Suchan",
+      "title": "Explainable AI for Emergency Landing Decisions: A Comparative Study of Learning Classifier Systems and Neural Networks",
+      "authors": "Evelyn Yamilet Quintero Guzman, Jakob Suchan, Boris Djartov",
+      "year": "2026",
+      "venue": "AHFE international",
+      "source": "openalex",
+      "sourceUrl": "https://doi.org/10.54941/ahfe1007842",
+      "doiUrl": "https://doi.org/10.54941/ahfe1007842",
+      "publicationDate": "2026-01-01",
+      "researcherIds": [
+        "jakob-suchan"
+      ],
+      "researcherNames": [
+        "Jakob Suchan"
+      ],
+      "tags": []
+    },
     {
       "researcherId": "francesco-maurelli",
       "researcherName": "Francesco Maurelli",
@@ -429,7 +467,7 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "title": "When less is more: Single selfhood-related cues elicit higher selfhood ratings than multiple cues",
       "authors": "Jan Pohl, Kristina Nikolovska, Francesco Maurelli, Arvid Kappas, Bernhard Hommel",
       "year": "2025",
-      "venue": "",
+      "venue": "Frontiers in Cognition",
       "source": "openalex",
       "sourceUrl": "https://doi.org/10.31219/osf.io/d3gkh_v1",
       "doiUrl": "https://doi.org/10.31219/osf.io/d3gkh_v1",
