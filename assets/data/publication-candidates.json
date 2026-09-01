@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-01T08:35:14.958Z",
+  "generatedAt": "2026-09-01T11:44:36.572Z",
   "status": "ok",
   "provider": "openalex",
   "notes": [
@@ -14,22 +14,28 @@
       "name": "Francesco Maurelli",
       "status": "ok",
       "openAlexAuthorId": "https://openalex.org/A5023480949",
-      "paperCount": 94
+      "paperCount": 99
     },
     {
       "id": "jakob-suchan",
       "name": "Jakob Suchan",
       "status": "ok",
       "openAlexAuthorId": "https://openalex.org/A5069718093",
-      "paperCount": 62
+      "paperCount": 63
     }
   ],
-  "previousCandidateCount": 88,
-  "preservedPublicationCount": 88,
-  "newPublicationCount": 2,
-  "knownPublicationCount": 82,
-  "duplicateCount": 16,
+  "previousCandidateCount": 90,
+  "preservedPublicationCount": 90,
+  "newPublicationCount": 6,
+  "knownPublicationCount": 77,
+  "duplicateCount": 17,
   "duplicates": [
+    {
+      "title": "Through Human Eye: Can a Robot Possess a Sense of Self?",
+      "researcherName": "Francesco Maurelli",
+      "duplicateOf": "Through Human Eye: Can a Robot Possess a Sense of Self?",
+      "reason": "duplicate-fresh-publication"
+    },
     {
       "title": "Selfhood-attribution in a social context: Further evidence for a Pars Pro Toto account",
       "researcherName": "Francesco Maurelli",
@@ -127,418 +133,573 @@
       "reason": "duplicate-fresh-publication"
     }
   ],
-  "warningCount": 68,
+  "warningCount": 73,
   "warnings": [
     {
       "type": "missing-tags",
       "index": 0,
+      "title": "A Cognitively Motivated Multidimensional Framework for Evaluating Metaphor Explanations",
+      "researcherName": "Jakob Suchan"
+    },
+    {
+      "type": "missing-venue",
+      "index": 2,
+      "title": "Adaptive Acoustic Modem Management for Energy-Accuracy Trade-Offs in AUV Localization",
+      "researcherName": "Francesco Maurelli"
+    },
+    {
+      "type": "missing-venue",
+      "index": 3,
+      "title": "Engineering the Ocean Decade Innovation Pipeline: The IEEE OES Ocean Challenge as a Scalable Mechanism for Ocean Technology Prototyping and Capacity Development",
+      "researcherName": "Francesco Maurelli"
+    },
+    {
+      "type": "missing-venue",
+      "index": 4,
+      "title": "LLM-Guided Bi-Objective Planning for Energy-Constrained AUV Fleets",
+      "researcherName": "Francesco Maurelli"
+    },
+    {
+      "type": "missing-venue",
+      "index": 5,
+      "title": "Spatially Varying Curve Estimation with Brightness-Aware Reinforcement Learning for Low-Light Underwater Enhancement",
+      "researcherName": "Francesco Maurelli"
+    },
+    {
+      "type": "missing-tags",
+      "index": 6,
       "title": "Answer Set Programming Energised! End-to-End Neurosymbolic Reasoning and Learning with ASP and Energy Based Models",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-tags",
-      "index": 1,
+      "index": 7,
       "title": "Explainable AI for Emergency Landing Decisions: A Comparative Study of Learning Classifier Systems and Neural Networks",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-tags",
-      "index": 2,
+      "index": 8,
       "title": "Enhanced quality assessment of Cymbopogon citratus essential oil by integrating Raman spectroscopy with machine learning methods",
       "researcherName": "Francesco Maurelli"
     },
     {
       "type": "missing-tags",
-      "index": 3,
+      "index": 9,
       "title": "Reasonable Motion: A General ASP Foundation for Environment Constrained Movement Trajectory Computation",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-tags",
-      "index": 5,
+      "index": 11,
       "title": "Visual Commonsense Driven Knowledge Refinements for Scene Graph Generation",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-tags",
-      "index": 6,
+      "index": 12,
       "title": "Through Human Eye: Can a Robot Possess a Sense of Self?",
       "researcherName": "Francesco Maurelli"
     },
     {
       "type": "missing-venue",
-      "index": 6,
+      "index": 12,
       "title": "Through Human Eye: Can a Robot Possess a Sense of Self?",
       "researcherName": "Francesco Maurelli"
     },
     {
       "type": "missing-tags",
-      "index": 7,
+      "index": 13,
       "title": "Integrating machine learning and artificial intelligence in the management of Acinetobacter infections: a narrative review",
       "researcherName": "Francesco Maurelli"
     },
     {
       "type": "missing-tags",
-      "index": 9,
+      "index": 15,
       "title": "Attribution of Selfhood Based on Simple Behavioral Cues: Toward a Pars‐Pro‐Toto Account",
       "researcherName": "Francesco Maurelli"
     },
     {
       "type": "missing-tags",
-      "index": 10,
+      "index": 16,
       "title": "When less is more: Single cues elicit higher ratings of selfhood-attribution than complex cues",
       "researcherName": "Francesco Maurelli"
     },
     {
       "type": "missing-tags",
-      "index": 11,
+      "index": 17,
       "title": "Towards a VLM-Based Foundation for Generalised Neurosymbolic Visual Commonsense",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-tags",
-      "index": 14,
+      "index": 20,
       "title": "A comprehensive contamination assessment methodology for lunar regolith on spacecraft",
       "researcherName": "Francesco Maurelli"
     },
     {
       "type": "missing-tags",
-      "index": 15,
+      "index": 21,
       "title": "ASP-Driven Visual Commonsense: A General Framework for Reasoning About Embodied Interaction in the Wild",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-venue",
-      "index": 15,
+      "index": 21,
       "title": "ASP-Driven Visual Commonsense: A General Framework for Reasoning About Embodied Interaction in the Wild",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-tags",
-      "index": 16,
+      "index": 22,
       "title": "Selfhood-attribution in a social context: further evidence for a Pars-Pro-Toto account",
       "researcherName": "Francesco Maurelli"
     },
     {
       "type": "missing-venue",
-      "index": 17,
+      "index": 23,
       "title": "Adaptive Curve Adjustment Via Reinforcement Learning for Underwater Image Enhancement",
       "researcherName": "Francesco Maurelli"
     },
     {
       "type": "missing-venue",
-      "index": 18,
+      "index": 24,
       "title": "Robust Underwater Localization via Sensor Fusion and Transformer-Based Visual Odometry",
       "researcherName": "Francesco Maurelli"
     },
     {
       "type": "missing-tags",
-      "index": 19,
+      "index": 25,
       "title": "Methodology for the estimation of lunar dust contamination effects on spacecraft",
       "researcherName": "Francesco Maurelli"
     },
     {
       "type": "missing-venue",
-      "index": 19,
+      "index": 25,
       "title": "Methodology for the estimation of lunar dust contamination effects on spacecraft",
       "researcherName": "Francesco Maurelli"
     },
     {
       "type": "missing-venue",
-      "index": 21,
+      "index": 27,
       "title": "Bridging the Gap with PRoMo: What Users Expect from Robot Navigation in Shared Environments",
       "researcherName": "Francesco Maurelli"
     },
     {
       "type": "missing-tags",
-      "index": 22,
+      "index": 28,
       "title": "When less is more: Single selfhood-related cues elicit higher selfhood ratings than multiple cues",
       "researcherName": "Francesco Maurelli"
     },
     {
       "type": "missing-tags",
-      "index": 23,
+      "index": 29,
       "title": "A Naturalistic Embodied Human Multimodal Interaction Dataset: Systematically Annotated Behavioural Visuo-Auditory Cue and Attention Data",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-venue",
-      "index": 23,
+      "index": 29,
       "title": "A Naturalistic Embodied Human Multimodal Interaction Dataset: Systematically Annotated Behavioural Visuo-Auditory Cue and Attention Data",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-venue",
-      "index": 24,
+      "index": 30,
       "title": "Teaching AI and Marine Robotics to High School Students - The Experience of the MASK Project",
       "researcherName": "Francesco Maurelli"
     },
     {
       "type": "missing-venue",
-      "index": 28,
+      "index": 34,
       "title": "The Impact of Social Inter-Robot Encounters on User Perception",
       "researcherName": "Francesco Maurelli"
     },
     {
       "type": "missing-tags",
-      "index": 29,
+      "index": 35,
       "title": "Authentication of Mentha arvensis essential oil using attenuated total reflectance-Fourier transform infrared spectrophotometry coupled with chemometrics",
       "researcherName": "Francesco Maurelli"
     },
     {
       "type": "missing-venue",
-      "index": 30,
+      "index": 36,
       "title": "User Perception of Robot Behavior as a Function of Previous Experience with Robots *",
       "researcherName": "Francesco Maurelli"
     },
     {
       "type": "missing-tags",
-      "index": 31,
+      "index": 37,
       "title": "Empowering the Next Wave of Robotics Innovators: Introducing the New RAS Young Professionals Committee [Young Profess Ionals]",
       "researcherName": "Francesco Maurelli"
     },
     {
       "type": "missing-tags",
-      "index": 32,
+      "index": 38,
       "title": "Attribution of Selfhood Based on Simple Behavioral Cues: Towards a Pars Pro Toto Account",
       "researcherName": "Francesco Maurelli"
     },
     {
       "type": "missing-tags",
-      "index": 34,
+      "index": 40,
       "title": "Proceedings 39th International Conference on Logic Programming",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-tags",
-      "index": 35,
+      "index": 41,
       "title": "How do drivers mitigate the effects of naturalistic visual complexity?",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-venue",
-      "index": 37,
+      "index": 43,
       "title": "MASK - increasing sea knowledge awareness among high school students using marine robots",
       "researcherName": "Francesco Maurelli"
     },
     {
       "type": "missing-tags",
-      "index": 39,
+      "index": 45,
       "title": "Artificial Visual Intelligence",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-tags",
-      "index": 41,
+      "index": 47,
       "title": "Human Models for Future Mobility",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-venue",
-      "index": 43,
+      "index": 49,
       "title": "Impact of Natural Gas Seeps on the Navigation of an Autonomous Underwater Vehicle",
       "researcherName": "Francesco Maurelli"
     },
     {
       "type": "missing-tags",
-      "index": 44,
+      "index": 50,
       "title": "Attentional synchrony in films: A window to visuospatial characterization of events",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-venue",
-      "index": 44,
+      "index": 50,
       "title": "Attentional synchrony in films: A window to visuospatial characterization of events",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-tags",
-      "index": 46,
+      "index": 52,
       "title": "Challenges in Achieving Explainability for Cooperative Transportation Systems",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-venue",
-      "index": 46,
+      "index": 52,
       "title": "Challenges in Achieving Explainability for Cooperative Transportation Systems",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-tags",
-      "index": 47,
+      "index": 53,
       "title": "Radiance values inside lunar caves and lava tubes",
       "researcherName": "Francesco Maurelli"
     },
     {
       "type": "missing-tags",
-      "index": 49,
+      "index": 55,
       "title": "Abschlussbericht SituWare",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-tags",
-      "index": 51,
+      "index": 57,
       "title": "Evaluation of computer networking methods for interaction with remote robotic systems",
       "researcherName": "Francesco Maurelli"
     },
     {
       "type": "missing-venue",
-      "index": 57,
+      "index": 63,
       "title": "Design and Fabrication of a Low-Cost 6 DoF Underwater Vehicle",
       "researcherName": "Francesco Maurelli"
     },
     {
       "type": "missing-tags",
-      "index": 60,
+      "index": 66,
       "title": "Lunar Caves Exploration with the DAEDALUS Spherical Robot",
       "researcherName": "Francesco Maurelli"
     },
     {
       "type": "missing-venue",
-      "index": 63,
+      "index": 69,
       "title": "Blue Duck II: A low-cost AUV design based on a moving mass for shallow-water operations",
       "researcherName": "Francesco Maurelli"
     },
     {
       "type": "missing-venue",
-      "index": 64,
+      "index": 70,
       "title": "Intelligence and Autonomy Extension for Low-cost Freshwater Inspection Vehicles",
       "researcherName": "Francesco Maurelli"
     },
     {
       "type": "missing-tags",
-      "index": 65,
+      "index": 71,
       "title": "Towards a Human-Centred Cognitive Model of Visuospatial Complexity in Everyday Driving",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-tags",
-      "index": 67,
+      "index": 73,
       "title": "Driven by Commonsense.",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-tags",
-      "index": 69,
+      "index": 75,
       "title": "Deep Semantics for Explainable Visuospatial Intelligence : Perspectives on Integrating Commonsense Spatial Abstractions and Low-Level Neural Features",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-tags",
-      "index": 70,
+      "index": 76,
       "title": "Semantic Analysis of (Reflectional) Visual Symmetry: A Human-Centred Computational Model for Declarative Explainability",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-tags",
-      "index": 71,
+      "index": 77,
       "title": "Visual Explanation by High-Level Abduction: On Answer-Set Programming Driven Reasoning About Moving Objects",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-tags",
-      "index": 72,
+      "index": 78,
       "title": "Answer Set Programming Modulo ‘Space-Time’",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-tags",
-      "index": 73,
+      "index": 79,
       "title": "Deep Semantic Abstractions of Everyday Human Activities",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-tags",
-      "index": 74,
+      "index": 80,
       "title": "Deep Semantic Abstractions of Everyday Human Activities: On Commonsense Representations of Human Interactions",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-tags",
-      "index": 75,
+      "index": 81,
       "title": "Commonsense Scene Semantics for Cognitive Robotics: Towards Grounding Embodied Visuo-Locomotive Interactions",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-venue",
-      "index": 75,
+      "index": 81,
       "title": "Commonsense Scene Semantics for Cognitive Robotics: Towards Grounding Embodied Visuo-Locomotive Interactions",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-tags",
-      "index": 77,
+      "index": 83,
       "title": "Declarative Reasoning about Space and Motion with Video",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-tags",
-      "index": 78,
+      "index": 84,
       "title": "Declarative Spatial Reasoning for Intelligent Cinematography",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-tags",
-      "index": 79,
+      "index": 85,
       "title": "Deeply Semantic Inductive Spatio-Temporal Learning",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-tags",
-      "index": 80,
+      "index": 86,
       "title": "Grounding Dynamic Spatial Relations for Embodied (Robot) Interaction",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-tags",
-      "index": 81,
+      "index": 87,
       "title": "Robust Natural Language Processing - Combining Reasoning, Cognitive Semantics and Construction Grammar for Spatial Language",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-tags",
-      "index": 83,
+      "index": 89,
       "title": "Embodied visuo-locomotive experience analysis",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-venue",
-      "index": 83,
+      "index": 89,
       "title": "Embodied visuo-locomotive experience analysis",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-venue",
-      "index": 84,
+      "index": 90,
       "title": "The perception of symmetry in the moving image",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-tags",
-      "index": 85,
+      "index": 91,
       "title": "Artificial Intelligence for Predictive and Evidence Based Architecture Design",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-venue",
-      "index": 86,
+      "index": 92,
       "title": "The geometry of a scene: On deep semantics for visual perception driven cognitive film, studies",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-tags",
-      "index": 87,
+      "index": 93,
       "title": "Probabilistic Spatial Reasoning in Constraint Logic Programming",
       "researcherName": "Jakob Suchan"
     },
     {
       "type": "missing-tags",
-      "index": 89,
+      "index": 95,
       "title": "Perceptual Narratives of Space and Motion for Semantic Interpretation of Visual Data",
       "researcherName": "Jakob Suchan"
     }
   ],
   "candidates": [
+    {
+      "researcherId": "jakob-suchan",
+      "researcherName": "Jakob Suchan",
+      "title": "A Cognitively Motivated Multidimensional Framework for Evaluating Metaphor Explanations",
+      "authors": "Ana Naveriani, Jakob Suchan, Stefano Zoia, Mehul Bhatt, Antonio Lieto, Gian Luca Pozzato",
+      "year": "2026",
+      "venue": "arXiv (Cornell University)",
+      "source": "openalex",
+      "sourceUrl": "https://arxiv.org/abs/2608.15828",
+      "doiUrl": "https://doi.org/10.48550/arxiv.2608.15828",
+      "publicationDate": "2026-08-16",
+      "researcherIds": [
+        "jakob-suchan"
+      ],
+      "researcherNames": [
+        "Jakob Suchan"
+      ],
+      "tags": []
+    },
+    {
+      "researcherId": "jakob-suchan",
+      "researcherName": "Jakob Suchan",
+      "title": "A Human-Factors Guided Cognitive Model of Visuospatial Complexity in Embodied Active Vision",
+      "authors": "Vasiliki Kondyli, Jakob Suchan, Mehul Bhatt",
+      "year": "2026",
+      "venue": "arXiv (Cornell University)",
+      "source": "openalex",
+      "sourceUrl": "https://arxiv.org/abs/2608.23572",
+      "doiUrl": "",
+      "publicationDate": "2026-06-26",
+      "researcherIds": [
+        "jakob-suchan"
+      ],
+      "researcherNames": [
+        "Jakob Suchan"
+      ],
+      "tags": [
+        "perception"
+      ]
+    },
+    {
+      "researcherId": "francesco-maurelli",
+      "researcherName": "Francesco Maurelli",
+      "title": "Adaptive Acoustic Modem Management for Energy-Accuracy Trade-Offs in AUV Localization",
+      "authors": "Muhammad Hamza Hussain, Shixin Sun, Francesco Maurelli",
+      "year": "2026",
+      "venue": "",
+      "source": "openalex",
+      "sourceUrl": "https://doi.org/10.1109/oceans66983.2026.11616750",
+      "doiUrl": "https://doi.org/10.1109/oceans66983.2026.11616750",
+      "publicationDate": "2026-05-01",
+      "researcherIds": [
+        "francesco-maurelli"
+      ],
+      "researcherNames": [
+        "Francesco Maurelli"
+      ],
+      "tags": [
+        "marine",
+        "slam"
+      ]
+    },
+    {
+      "researcherId": "francesco-maurelli",
+      "researcherName": "Francesco Maurelli",
+      "title": "Engineering the Ocean Decade Innovation Pipeline: The IEEE OES Ocean Challenge as a Scalable Mechanism for Ocean Technology Prototyping and Capacity Development",
+      "authors": "Francesco Maurelli, Hunter Alloway, Alexandre de Terrasson de Montleau, Mauro Gonçalves Bueno, Giulia De Masi",
+      "year": "2026",
+      "venue": "",
+      "source": "openalex",
+      "sourceUrl": "https://doi.org/10.1109/oceans66983.2026.11616829",
+      "doiUrl": "https://doi.org/10.1109/oceans66983.2026.11616829",
+      "publicationDate": "2026-05-01",
+      "researcherIds": [
+        "francesco-maurelli"
+      ],
+      "researcherNames": [
+        "Francesco Maurelli"
+      ],
+      "tags": [
+        "marine"
+      ]
+    },
+    {
+      "researcherId": "francesco-maurelli",
+      "researcherName": "Francesco Maurelli",
+      "title": "LLM-Guided Bi-Objective Planning for Energy-Constrained AUV Fleets",
+      "authors": "Huibo Zhang, Jinzhi Cai, Ziyi Xia, Lin Hong, Francesco Maurelli, Fumin Zhang",
+      "year": "2026",
+      "venue": "",
+      "source": "openalex",
+      "sourceUrl": "https://doi.org/10.1109/oceans66983.2026.11617008",
+      "doiUrl": "https://doi.org/10.1109/oceans66983.2026.11617008",
+      "publicationDate": "2026-05-01",
+      "researcherIds": [
+        "francesco-maurelli"
+      ],
+      "researcherNames": [
+        "Francesco Maurelli"
+      ],
+      "tags": [
+        "marine"
+      ]
+    },
+    {
+      "researcherId": "francesco-maurelli",
+      "researcherName": "Francesco Maurelli",
+      "title": "Spatially Varying Curve Estimation with Brightness-Aware Reinforcement Learning for Low-Light Underwater Enhancement",
+      "authors": "Shixin Sun, Muhammad Hamza Hussain, Francesco Maurelli",
+      "year": "2026",
+      "venue": "",
+      "source": "openalex",
+      "sourceUrl": "https://doi.org/10.1109/oceans66983.2026.11616847",
+      "doiUrl": "https://doi.org/10.1109/oceans66983.2026.11616847",
+      "publicationDate": "2026-05-01",
+      "researcherIds": [
+        "francesco-maurelli"
+      ],
+      "researcherNames": [
+        "Francesco Maurelli"
+      ],
+      "tags": [
+        "marine"
+      ]
+    },
     {
       "researcherId": "jakob-suchan",
       "researcherName": "Jakob Suchan",

@@ -1,5 +1,5 @@
 window.RIS_GENERATED_PUBLICATIONS = {
-  "generatedAt": "2026-08-01T08:35:14.958Z",
+  "generatedAt": "2026-09-01T11:44:36.572Z",
   "status": "ok",
   "provider": "openalex",
   "authors": [
@@ -8,22 +8,147 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "name": "Francesco Maurelli",
       "status": "ok",
       "openAlexAuthorId": "https://openalex.org/A5023480949",
-      "paperCount": 94
+      "paperCount": 99
     },
     {
       "id": "jakob-suchan",
       "name": "Jakob Suchan",
       "status": "ok",
       "openAlexAuthorId": "https://openalex.org/A5069718093",
-      "paperCount": 62
+      "paperCount": 63
     }
   ],
-  "previousCandidateCount": 88,
-  "preservedPublicationCount": 88,
-  "newPublicationCount": 2,
-  "knownPublicationCount": 82,
-  "warningCount": 68,
+  "previousCandidateCount": 90,
+  "preservedPublicationCount": 90,
+  "newPublicationCount": 6,
+  "knownPublicationCount": 77,
+  "warningCount": 73,
   "publications": [
+    {
+      "researcherId": "jakob-suchan",
+      "researcherName": "Jakob Suchan",
+      "title": "A Cognitively Motivated Multidimensional Framework for Evaluating Metaphor Explanations",
+      "authors": "Ana Naveriani, Jakob Suchan, Stefano Zoia, Mehul Bhatt, Antonio Lieto, Gian Luca Pozzato",
+      "year": "2026",
+      "venue": "arXiv (Cornell University)",
+      "source": "openalex",
+      "sourceUrl": "https://arxiv.org/abs/2608.15828",
+      "doiUrl": "https://doi.org/10.48550/arxiv.2608.15828",
+      "publicationDate": "2026-08-16",
+      "researcherIds": [
+        "jakob-suchan"
+      ],
+      "researcherNames": [
+        "Jakob Suchan"
+      ],
+      "tags": []
+    },
+    {
+      "researcherId": "jakob-suchan",
+      "researcherName": "Jakob Suchan",
+      "title": "A Human-Factors Guided Cognitive Model of Visuospatial Complexity in Embodied Active Vision",
+      "authors": "Vasiliki Kondyli, Jakob Suchan, Mehul Bhatt",
+      "year": "2026",
+      "venue": "arXiv (Cornell University)",
+      "source": "openalex",
+      "sourceUrl": "https://arxiv.org/abs/2608.23572",
+      "doiUrl": "",
+      "publicationDate": "2026-06-26",
+      "researcherIds": [
+        "jakob-suchan"
+      ],
+      "researcherNames": [
+        "Jakob Suchan"
+      ],
+      "tags": [
+        "perception"
+      ]
+    },
+    {
+      "researcherId": "francesco-maurelli",
+      "researcherName": "Francesco Maurelli",
+      "title": "Adaptive Acoustic Modem Management for Energy-Accuracy Trade-Offs in AUV Localization",
+      "authors": "Muhammad Hamza Hussain, Shixin Sun, Francesco Maurelli",
+      "year": "2026",
+      "venue": "",
+      "source": "openalex",
+      "sourceUrl": "https://doi.org/10.1109/oceans66983.2026.11616750",
+      "doiUrl": "https://doi.org/10.1109/oceans66983.2026.11616750",
+      "publicationDate": "2026-05-01",
+      "researcherIds": [
+        "francesco-maurelli"
+      ],
+      "researcherNames": [
+        "Francesco Maurelli"
+      ],
+      "tags": [
+        "marine",
+        "slam"
+      ]
+    },
+    {
+      "researcherId": "francesco-maurelli",
+      "researcherName": "Francesco Maurelli",
+      "title": "Engineering the Ocean Decade Innovation Pipeline: The IEEE OES Ocean Challenge as a Scalable Mechanism for Ocean Technology Prototyping and Capacity Development",
+      "authors": "Francesco Maurelli, Hunter Alloway, Alexandre de Terrasson de Montleau, Mauro Gonçalves Bueno, Giulia De Masi",
+      "year": "2026",
+      "venue": "",
+      "source": "openalex",
+      "sourceUrl": "https://doi.org/10.1109/oceans66983.2026.11616829",
+      "doiUrl": "https://doi.org/10.1109/oceans66983.2026.11616829",
+      "publicationDate": "2026-05-01",
+      "researcherIds": [
+        "francesco-maurelli"
+      ],
+      "researcherNames": [
+        "Francesco Maurelli"
+      ],
+      "tags": [
+        "marine"
+      ]
+    },
+    {
+      "researcherId": "francesco-maurelli",
+      "researcherName": "Francesco Maurelli",
+      "title": "LLM-Guided Bi-Objective Planning for Energy-Constrained AUV Fleets",
+      "authors": "Huibo Zhang, Jinzhi Cai, Ziyi Xia, Lin Hong, Francesco Maurelli, Fumin Zhang",
+      "year": "2026",
+      "venue": "",
+      "source": "openalex",
+      "sourceUrl": "https://doi.org/10.1109/oceans66983.2026.11617008",
+      "doiUrl": "https://doi.org/10.1109/oceans66983.2026.11617008",
+      "publicationDate": "2026-05-01",
+      "researcherIds": [
+        "francesco-maurelli"
+      ],
+      "researcherNames": [
+        "Francesco Maurelli"
+      ],
+      "tags": [
+        "marine"
+      ]
+    },
+    {
+      "researcherId": "francesco-maurelli",
+      "researcherName": "Francesco Maurelli",
+      "title": "Spatially Varying Curve Estimation with Brightness-Aware Reinforcement Learning for Low-Light Underwater Enhancement",
+      "authors": "Shixin Sun, Muhammad Hamza Hussain, Francesco Maurelli",
+      "year": "2026",
+      "venue": "",
+      "source": "openalex",
+      "sourceUrl": "https://doi.org/10.1109/oceans66983.2026.11616847",
+      "doiUrl": "https://doi.org/10.1109/oceans66983.2026.11616847",
+      "publicationDate": "2026-05-01",
+      "researcherIds": [
+        "francesco-maurelli"
+      ],
+      "researcherNames": [
+        "Francesco Maurelli"
+      ],
+      "tags": [
+        "marine"
+      ]
+    },
     {
       "researcherId": "jakob-suchan",
       "researcherName": "Jakob Suchan",
