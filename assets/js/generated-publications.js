@@ -1,5 +1,5 @@
 window.RIS_GENERATED_PUBLICATIONS = {
-  "generatedAt": "2026-09-01T11:44:36.572Z",
+  "generatedAt": "2026-10-01T13:27:26.806Z",
   "status": "ok",
   "provider": "openalex",
   "authors": [
@@ -8,22 +8,41 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "name": "Francesco Maurelli",
       "status": "ok",
       "openAlexAuthorId": "https://openalex.org/A5023480949",
-      "paperCount": 99
+      "paperCount": 100
     },
     {
       "id": "jakob-suchan",
       "name": "Jakob Suchan",
       "status": "ok",
       "openAlexAuthorId": "https://openalex.org/A5069718093",
-      "paperCount": 63
+      "paperCount": 60
     }
   ],
-  "previousCandidateCount": 90,
-  "preservedPublicationCount": 90,
-  "newPublicationCount": 6,
-  "knownPublicationCount": 77,
-  "warningCount": 73,
+  "previousCandidateCount": 96,
+  "preservedPublicationCount": 96,
+  "newPublicationCount": 1,
+  "knownPublicationCount": 85,
+  "warningCount": 74,
   "publications": [
+    {
+      "researcherId": "francesco-maurelli",
+      "researcherName": "Francesco Maurelli",
+      "title": "Power of connection: China’s new paradigm for open S&T cooperation via global networks of young scientists",
+      "authors": "Meng Wang, Shaoshan LIU, Susie Chan, Chunbo GAO, Francesco Maurelli, David Govoni",
+      "year": "2026",
+      "venue": "Zhongguo Kexueyuan yuankan",
+      "source": "openalex",
+      "sourceUrl": "https://doi.org/10.3724/j.issn.1000-3045.20251224012",
+      "doiUrl": "https://doi.org/10.3724/j.issn.1000-3045.20251224012",
+      "publicationDate": "2026-09-01",
+      "researcherIds": [
+        "francesco-maurelli"
+      ],
+      "researcherNames": [
+        "Francesco Maurelli"
+      ],
+      "tags": []
+    },
     {
       "researcherId": "jakob-suchan",
       "researcherName": "Jakob Suchan",
@@ -1521,7 +1540,7 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "venue": "European Conference on Artificial Intelligence",
       "source": "openalex",
       "sourceUrl": "https://dblp.uni-trier.de/db/conf/ecai/ecai2020.html#SuchanBV20",
-      "doiUrl": "",
+      "doiUrl": "https://doi.org/10.3233/faia200463",
       "publicationDate": "2020-01-01",
       "researcherIds": [
         "jakob-suchan"
