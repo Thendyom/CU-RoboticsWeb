@@ -1,5 +1,5 @@
 window.RIS_GENERATED_PUBLICATIONS = {
-  "generatedAt": "2026-10-01T13:27:26.806Z",
+  "generatedAt": "2026-11-01T13:33:32.141Z",
   "status": "ok",
   "provider": "openalex",
   "authors": [
@@ -8,22 +8,117 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "name": "Francesco Maurelli",
       "status": "ok",
       "openAlexAuthorId": "https://openalex.org/A5023480949",
-      "paperCount": 100
+      "paperCount": 99
     },
     {
       "id": "jakob-suchan",
       "name": "Jakob Suchan",
       "status": "ok",
       "openAlexAuthorId": "https://openalex.org/A5069718093",
-      "paperCount": 60
+      "paperCount": 53
     }
   ],
-  "previousCandidateCount": 96,
-  "preservedPublicationCount": 96,
-  "newPublicationCount": 1,
-  "knownPublicationCount": 85,
-  "warningCount": 74,
+  "previousCandidateCount": 97,
+  "preservedPublicationCount": 97,
+  "newPublicationCount": 5,
+  "knownPublicationCount": 89,
+  "warningCount": 58,
   "publications": [
+    {
+      "researcherId": "jakob-suchan",
+      "researcherName": "Jakob Suchan",
+      "title": "Anticipatory Commonsense with Moving Objects: An ASP-Based Framework for Predictive Reasoning with Interacting Trajectories",
+      "authors": "Julius Monsen, Jakob Suchan, Mehul Bhatt",
+      "year": "2026",
+      "venue": "arXiv (Cornell University)",
+      "source": "openalex",
+      "sourceUrl": "https://arxiv.org/abs/2610.20867",
+      "doiUrl": "https://doi.org/10.48550/arxiv.2610.20867",
+      "publicationDate": "2026-10-14",
+      "researcherIds": [
+        "jakob-suchan"
+      ],
+      "researcherNames": [
+        "Jakob Suchan"
+      ],
+      "tags": []
+    },
+    {
+      "researcherId": "jakob-suchan",
+      "researcherName": "Jakob Suchan",
+      "title": "Reasonable Motion",
+      "authors": "Julius Monsen, Jakob Suchan, Mehul Bhatt, Lars Karlsson",
+      "year": "2026",
+      "venue": "Lecture notes in computer science",
+      "source": "openalex",
+      "sourceUrl": "https://doi.org/10.1007/978-3-032-38320-4_21",
+      "doiUrl": "https://doi.org/10.1007/978-3-032-38320-4_21",
+      "publicationDate": "2026-10-11",
+      "researcherIds": [
+        "jakob-suchan"
+      ],
+      "researcherNames": [
+        "Jakob Suchan"
+      ],
+      "tags": []
+    },
+    {
+      "researcherId": "francesco-maurelli",
+      "researcherName": "Francesco Maurelli",
+      "title": "LBA-CBF: Rapidly Adaptive Safety Filters via Parallel Dynamics Inference",
+      "authors": "Maitham F. AL-Sunni, Timeea-Andreea Radu, Hassan Almubarak, Henry Z. Liao, Michael Görner, Francesco Maurelli, John M. Dolan",
+      "year": "2026",
+      "venue": "arXiv (Cornell University)",
+      "source": "openalex",
+      "sourceUrl": "https://arxiv.org/abs/2610.08765",
+      "doiUrl": "https://doi.org/10.48550/arxiv.2610.08765",
+      "publicationDate": "2026-10-06",
+      "researcherIds": [
+        "francesco-maurelli"
+      ],
+      "researcherNames": [
+        "Francesco Maurelli"
+      ],
+      "tags": []
+    },
+    {
+      "researcherId": "francesco-maurelli",
+      "researcherName": "Francesco Maurelli",
+      "title": "Too Easy, Too Hard, or Just Right? Investigating the Effects of Robot Speed and Task Difficulty on Mental Workload in Human-Robot Interaction",
+      "authors": "Bisera Janevska, Francesco Maurelli, Kristina Nikolovska",
+      "year": "2026",
+      "venue": "IEEE RO-MAN",
+      "source": "openalex",
+      "sourceUrl": "https://doi.org/10.1109/ro-man72286.2026.11714932",
+      "doiUrl": "https://doi.org/10.1109/ro-man72286.2026.11714932",
+      "publicationDate": "2026-08-01",
+      "researcherIds": [
+        "francesco-maurelli"
+      ],
+      "researcherNames": [
+        "Francesco Maurelli"
+      ],
+      "tags": []
+    },
+    {
+      "researcherId": "jakob-suchan",
+      "researcherName": "Jakob Suchan",
+      "title": "ROTUNDE - A Smart Meeting Cinematography Initiative: Tools, Datasets, and Benchmarks for Cognitive Interpretation and Control",
+      "authors": "Mehul Bhatt, Jakob Suchan, Christian Freksa",
+      "year": "2013",
+      "venue": "arXiv (Cornell University)",
+      "source": "openalex",
+      "sourceUrl": "http://arxiv.org/abs/1306.1034",
+      "doiUrl": "https://doi.org/10.48550/arxiv.1306.1034",
+      "publicationDate": "2013-06-05",
+      "researcherIds": [
+        "jakob-suchan"
+      ],
+      "researcherNames": [
+        "Jakob Suchan"
+      ],
+      "tags": []
+    },
     {
       "researcherId": "francesco-maurelli",
       "researcherName": "Francesco Maurelli",
@@ -89,7 +184,7 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "title": "Adaptive Acoustic Modem Management for Energy-Accuracy Trade-Offs in AUV Localization",
       "authors": "Muhammad Hamza Hussain, Shixin Sun, Francesco Maurelli",
       "year": "2026",
-      "venue": "",
+      "venue": "MTS/IEEE OCEANS Conference (OCEANS)",
       "source": "openalex",
       "sourceUrl": "https://doi.org/10.1109/oceans66983.2026.11616750",
       "doiUrl": "https://doi.org/10.1109/oceans66983.2026.11616750",
@@ -111,7 +206,7 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "title": "Engineering the Ocean Decade Innovation Pipeline: The IEEE OES Ocean Challenge as a Scalable Mechanism for Ocean Technology Prototyping and Capacity Development",
       "authors": "Francesco Maurelli, Hunter Alloway, Alexandre de Terrasson de Montleau, Mauro Gonçalves Bueno, Giulia De Masi",
       "year": "2026",
-      "venue": "",
+      "venue": "MTS/IEEE OCEANS Conference (OCEANS)",
       "source": "openalex",
       "sourceUrl": "https://doi.org/10.1109/oceans66983.2026.11616829",
       "doiUrl": "https://doi.org/10.1109/oceans66983.2026.11616829",
@@ -132,7 +227,7 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "title": "LLM-Guided Bi-Objective Planning for Energy-Constrained AUV Fleets",
       "authors": "Huibo Zhang, Jinzhi Cai, Ziyi Xia, Lin Hong, Francesco Maurelli, Fumin Zhang",
       "year": "2026",
-      "venue": "",
+      "venue": "MTS/IEEE OCEANS Conference (OCEANS)",
       "source": "openalex",
       "sourceUrl": "https://doi.org/10.1109/oceans66983.2026.11617008",
       "doiUrl": "https://doi.org/10.1109/oceans66983.2026.11617008",
@@ -153,7 +248,7 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "title": "Spatially Varying Curve Estimation with Brightness-Aware Reinforcement Learning for Low-Light Underwater Enhancement",
       "authors": "Shixin Sun, Muhammad Hamza Hussain, Francesco Maurelli",
       "year": "2026",
-      "venue": "",
+      "venue": "MTS/IEEE OCEANS Conference (OCEANS)",
       "source": "openalex",
       "sourceUrl": "https://doi.org/10.1109/oceans66983.2026.11616847",
       "doiUrl": "https://doi.org/10.1109/oceans66983.2026.11616847",
@@ -468,7 +563,7 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "title": "ASP-Driven Visual Commonsense: A General Framework for Reasoning About Embodied Interaction in the Wild",
       "authors": "Jakob Suchan, Mehul Bhatt, Julius Monsen",
       "year": "2025",
-      "venue": "",
+      "venue": "Principles of Knowledge Representation and Reasoning",
       "source": "openalex",
       "sourceUrl": "https://doi.org/10.24963/kr.2025/61",
       "doiUrl": "https://doi.org/10.24963/kr.2025/61",
@@ -550,7 +645,7 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "title": "Methodology for the estimation of lunar dust contamination effects on spacecraft",
       "authors": "Daniel Boelke, Armen Jaworski, Bahar Kilitoglu, Joachim Vogt, Francesco Maurelli",
       "year": "2025",
-      "venue": "",
+      "venue": "Space Systems Contamination: Prediction, Control, and Performance",
       "source": "openalex",
       "sourceUrl": "https://doi.org/10.1117/12.3063870",
       "doiUrl": "https://doi.org/10.1117/12.3063870",
@@ -590,7 +685,7 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "title": "Bridging the Gap with PRoMo: What Users Expect from Robot Navigation in Shared Environments",
       "authors": "Kristina Nikolovska, Arvid Kappas, Francesco Maurelli",
       "year": "2025",
-      "venue": "",
+      "venue": "IEEE RO-MAN",
       "source": "openalex",
       "sourceUrl": "https://doi.org/10.1109/ro-man63969.2025.11217616",
       "doiUrl": "https://doi.org/10.1109/ro-man63969.2025.11217616",
@@ -649,7 +744,7 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "title": "Teaching AI and Marine Robotics to High School Students - The Experience of the MASK Project",
       "authors": "Fausto Ferreira, Đula Nađ, Nikola Mišković, Francesco Maurelli, Antonio Blažina, Lovro Maglić",
       "year": "2025",
-      "venue": "",
+      "venue": "MTS/IEEE OCEANS Conference (OCEANS)",
       "source": "openalex",
       "sourceUrl": "https://doi.org/10.1109/oceans58557.2025.11104309",
       "doiUrl": "https://doi.org/10.1109/oceans58557.2025.11104309",
@@ -734,7 +829,7 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "title": "The Impact of Social Inter-Robot Encounters on User Perception",
       "authors": "Kristina Nikolovska, Jan Pohl, Bernhard Hommel, Arvid Kappas, Francesco Maurelli",
       "year": "2024",
-      "venue": "",
+      "venue": "IEEE RO-MAN",
       "source": "openalex",
       "sourceUrl": "https://doi.org/10.1109/ro-man60168.2024.10731412",
       "doiUrl": "https://doi.org/10.1109/ro-man60168.2024.10731412",
@@ -774,7 +869,7 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "title": "User Perception of Robot Behavior as a Function of Previous Experience with Robots *",
       "authors": "Kristina Nikolovska, Jan Pohl, Bernhard Hommel, Arvid Kappas, Francesco Maurelli",
       "year": "2024",
-      "venue": "",
+      "venue": "Conference on Human System Interactions",
       "source": "openalex",
       "sourceUrl": "https://doi.org/10.1109/hsi61632.2024.10613554",
       "doiUrl": "https://doi.org/10.1109/hsi61632.2024.10613554",
@@ -913,7 +1008,7 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "title": "MASK - increasing sea knowledge awareness among high school students using marine robots",
       "authors": "Fausto Ferreira, Đula Nađ, Tomislav Jagušt, Nikola Mišković, Francesco Maurelli, Antonio Blažina, Lovro Maglić",
       "year": "2023",
-      "venue": "",
+      "venue": "MTS/IEEE OCEANS Conference (OCEANS)",
       "source": "openalex",
       "sourceUrl": "https://doi.org/10.1109/oceanslimerick52467.2023.10244477",
       "doiUrl": "https://doi.org/10.1109/oceanslimerick52467.2023.10244477",
@@ -1036,7 +1131,7 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "title": "Impact of Natural Gas Seeps on the Navigation of an Autonomous Underwater Vehicle",
       "authors": "Matteo Bresciani, Simone Tani, F. Di Ruscio, Leonardo Zacchini, Lorenzo Bartalucci, Alessandro Ridolfi, Francesco Maurelli, Riccardo Costanzi",
       "year": "2022",
-      "venue": "",
+      "venue": "IEEE/OES Autonomous Underwater Vehicles",
       "source": "openalex",
       "sourceUrl": "https://doi.org/10.1109/auv53081.2022.9965897",
       "doiUrl": "https://doi.org/10.1109/auv53081.2022.9965897",
@@ -1059,7 +1154,7 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "title": "Attentional synchrony in films: A window to visuospatial characterization of events",
       "authors": "Vipul Nair, Jakob Suchan, Mehul Bhatt, Paul Hemeren",
       "year": "2022",
-      "venue": "",
+      "venue": "ACM Symposium on Applied Perception",
       "source": "openalex",
       "sourceUrl": "https://doi.org/10.1145/3548814.3551466",
       "doiUrl": "https://doi.org/10.1145/3548814.3551466",
@@ -1070,7 +1165,9 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "researcherNames": [
         "Jakob Suchan"
       ],
-      "tags": []
+      "tags": [
+        "perception"
+      ]
     },
     {
       "researcherId": "francesco-maurelli",
@@ -1099,7 +1196,7 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "title": "Challenges in Achieving Explainability for Cooperative Transportation Systems",
       "authors": "Björn Koopmann, Alexander Trende, Karina Rothemann, Linda Feeken, Jakob Suchan, Daniela Johannmeyer, Yvonne Bruck",
       "year": "2022",
-      "venue": "",
+      "venue": "IEEE International Requirements Engineering Conference Workshops (REW)",
       "source": "openalex",
       "sourceUrl": "https://doi.org/10.1109/rew56159.2022.00028",
       "doiUrl": "https://doi.org/10.1109/rew56159.2022.00028",
@@ -1691,7 +1788,7 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "title": "Commonsense Scene Semantics for Cognitive Robotics: Towards Grounding Embodied Visuo-Locomotive Interactions",
       "authors": "Jakob Suchan, Mehul Bhatt",
       "year": "2017",
-      "venue": "",
+      "venue": "IEEE International Conference on Computer Vision Workshops",
       "source": "openalex",
       "sourceUrl": "https://doi.org/10.1109/iccvw.2017.93",
       "doiUrl": "https://doi.org/10.1109/iccvw.2017.93",
@@ -1702,7 +1799,9 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "researcherNames": [
         "Jakob Suchan"
       ],
-      "tags": []
+      "tags": [
+        "perception"
+      ]
     },
     {
       "researcherId": "jakob-suchan",
@@ -1847,7 +1946,7 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "title": "Embodied visuo-locomotive experience analysis",
       "authors": "Mehul Bhatt, Jakob Suchan, Vasiliki Kondyli, Carl Schultz",
       "year": "2016",
-      "venue": "",
+      "venue": "ACM Symposium on Applied Perception",
       "source": "openalex",
       "sourceUrl": "https://doi.org/10.1145/2931002.2948720",
       "doiUrl": "https://doi.org/10.1145/2931002.2948720",
@@ -1858,7 +1957,9 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "researcherNames": [
         "Jakob Suchan"
       ],
-      "tags": []
+      "tags": [
+        "perception"
+      ]
     },
     {
       "researcherId": "jakob-suchan",
@@ -1866,7 +1967,7 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "title": "The perception of symmetry in the moving image",
       "authors": "Jakob Suchan, Mehul Bhatt, Stella X. Yu",
       "year": "2016",
-      "venue": "",
+      "venue": "ACM Symposium on Applied Perception",
       "source": "openalex",
       "sourceUrl": "https://doi.org/10.1145/2931002.2948721",
       "doiUrl": "https://doi.org/10.1145/2931002.2948721",
@@ -1906,7 +2007,7 @@ window.RIS_GENERATED_PUBLICATIONS = {
       "title": "The geometry of a scene: On deep semantics for visual perception driven cognitive film, studies",
       "authors": "Jakob Suchan, Mehul Bhatt",
       "year": "2016",
-      "venue": "",
+      "venue": "IEEE Winter Conference on Applications of Computer Vision",
       "source": "openalex",
       "sourceUrl": "https://doi.org/10.1109/wacv.2016.7477712",
       "doiUrl": "https://doi.org/10.1109/wacv.2016.7477712",
